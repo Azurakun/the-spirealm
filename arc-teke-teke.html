@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Teke Teke — Pintu V · The Spirealm</title>
+  <meta name="description" content="Arc Teke Teke (Satchan): pintu kelima Lin Qiushi dalam Kaleidoscope of Death. Sebuah SMA di Jepang, sebuah lagu terkutuk, dan gadis tanpa kaki yang menagih kaki.">
+  <meta name="theme-color" content="#0a0d12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect x='1' y='1' width='18' height='26' fill='%235a3a22' stroke='%23d01b22'/%3E%3Ccircle cx='15' cy='15' r='1.5' fill='%23e9e2d6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Shippori+Mincho+B1:wght@500;800&family=Special+Elite&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/arc.css">
+  <link rel="stylesheet" href="assets/css/arc-teke.css">
+</head>
+<body class="atmos arc arc--teke is-locked" data-drone="49">
+  <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
+  <div class="read-progress" data-read-progress aria-hidden="true"></div>
+
+  <!-- Reusable art -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="tk-floor" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#1b222c"/>
+        <stop offset="1" stop-color="#06080b"/>
+      </linearGradient>
+      <linearGradient id="tk-blood" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#5e0508" stop-opacity="0.85"/>
+        <stop offset="1" stop-color="#5e0508" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="tk-glow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#cfe2f2" stop-opacity="0.35"/>
+        <stop offset="1" stop-color="#cfe2f2" stop-opacity="0"/>
+      </radialGradient>
+      <symbol id="tk-corridor" viewBox="0 0 1600 900">
+        <rect width="1600" height="900" fill="#05070a"/>
+        <polygon points="0,0 1600,0 1020,370 900,370" fill="#0c1118"/>
+        <polygon points="0,900 1600,900 1020,470 900,470" fill="url(#tk-floor)"/>
+        <polygon points="0,0 900,370 900,470 0,900" fill="#0f151d"/>
+        <polygon points="1600,0 1020,370 1020,470 1600,900" fill="#0b1017"/>
+        <rect x="900" y="370" width="120" height="100" fill="#000"/>
+        <!-- windows (left wall) -->
+        <g fill="#6f8fae" fill-opacity="0.16" stroke="#9fb6cc" stroke-opacity="0.25" stroke-width="2">
+          <polygon points="80,240 280,278 280,473 80,489"/>
+          <polygon points="380,296 520,323 520,455 380,465"/>
+          <polygon points="600,338 700,357 700,441 600,448"/>
+        </g>
+        <g stroke="#9fb6cc" stroke-opacity="0.2" stroke-width="2">
+          <line x1="180" y1="259" x2="180" y2="481"/>
+          <line x1="450" y1="309" x2="450" y2="460"/>
+        </g>
+        <!-- classroom door + plate (right wall) -->
+        <polygon points="1180,412 1300,410 1300,654 1180,573" fill="#06080b" stroke="#1e2731" stroke-width="3"/>
+        <polygon points="1190,372 1290,362 1290,394 1190,400" fill="#c9c2b4" fill-opacity="0.75"/>
+        <text x="1240" y="391" text-anchor="middle" font-family="Shippori Mincho B1, serif" font-size="22" font-weight="800" fill="#1a1512">3年2組</text>
+        <!-- fluorescent tubes -->
+        <rect class="corr-light" x="668" y="58" width="320" height="14" fill="#dfeefa"/>
+        <rect class="corr-light" x="790" y="196" width="192" height="8" fill="#dfeefa"/>
+        <rect class="corr-light" x="882" y="298" width="96" height="4" fill="#dfeefa"/>
+        <ellipse cx="830" cy="720" rx="420" ry="90" fill="url(#tk-glow)"/>
+        <!-- drag trail -->
+        <polygon points="955,470 966,470 840,900 700,900" fill="url(#tk-blood)"/>
+        <ellipse cx="770" cy="860" rx="60" ry="10" fill="#5e0508" fill-opacity="0.6"/>
+      </symbol>
+
+      <symbol id="tk-crawler" viewBox="0 0 200 170">
+        <g fill="#000" stroke="#9fb6cc" stroke-opacity="0.35" stroke-width="1.2">
+          <path d="M62 98 C80 84 120 84 138 98 L132 120 C112 112 88 112 68 120 Z"/>
+          <g class="arm-a">
+            <path d="M66 100 C50 112 40 130 30 150 L20 162 L44 160 L46 150 C56 134 66 120 76 112 Z"/>
+            <path d="M134 100 C146 112 152 124 156 134 L168 138 L162 146 C150 140 140 128 126 114 Z"/>
+          </g>
+          <g class="arm-b">
+            <path d="M134 100 C150 112 160 130 170 150 L180 162 L156 160 L154 150 C144 134 134 120 124 112 Z"/>
+            <path d="M66 100 C54 112 48 124 44 134 L32 138 L38 146 C50 140 60 128 74 114 Z"/>
+          </g>
+          <path d="M100 28 C80 28 71 46 73 66 C69 92 65 114 71 134 L81 110 L86 136 L92 112 L98 140 L104 112 L110 138 L116 110 L122 132 L128 106 C135 88 129 50 127 44 C123 33 112 28 100 28 Z"/>
+        </g>
+        <circle cx="93" cy="64" r="2.2" fill="#d01b22"/>
+        <circle cx="108" cy="64" r="2.2" fill="#d01b22"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= CINEMATIC ================= -->
+  <div class="cine" data-cine role="region" aria-label="Adegan pembuka Arc Teke Teke">
+    <div class="cine__top">
+      <span class="eyebrow">Pintu V <span class="dot">◆</span> Satchan</span>
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+
+    <div class="cine__stage">
+      <!-- 1 -->
+      <div class="scene scene--winter" data-scene="winter" data-dur="3600">
+        <div class="scene__art">
+          <canvas class="snow-canvas" data-snow aria-hidden="true"></canvas>
+          <svg class="school-silhouette" viewBox="0 0 800 320" aria-hidden="true">
+            <rect x="0" y="262" width="800" height="58" fill="#c9d3dc" fill-opacity="0.12"/>
+            <g fill="#020305">
+              <rect x="110" y="128" width="580" height="136"/>
+              <rect x="350" y="60" width="100" height="204"/>
+              <polygon points="340,62 400,26 460,62"/>
+            </g>
+            <circle cx="400" cy="100" r="20" fill="none" stroke="#3b4652" stroke-width="3"/>
+            <line x1="400" y1="100" x2="400" y2="86" stroke="#3b4652" stroke-width="3"/>
+            <line x1="400" y1="100" x2="410" y2="104" stroke="#3b4652" stroke-width="3"/>
+            <g fill="#1a222b">
+              <rect x="135" y="148" width="34" height="22"/><rect x="185" y="148" width="34" height="22"/><rect x="235" y="148" width="34" height="22"/><rect x="285" y="148" width="34" height="22"/>
+              <rect x="480" y="148" width="34" height="22"/><rect x="530" y="148" width="34" height="22"/><rect x="580" y="148" width="34" height="22"/>
+              <rect x="135" y="198" width="34" height="22"/><rect x="185" y="198" width="34" height="22"/><rect x="285" y="198" width="34" height="22"/>
+              <rect x="480" y="198" width="34" height="22"/><rect x="580" y="198" width="34" height="22"/><rect x="630" y="198" width="34" height="22"/>
+            </g>
+            <rect x="235" y="198" width="34" height="22" fill="#d9c58a" fill-opacity="0.5"/>
+            <rect x="630" y="148" width="34" height="22" fill="#d01b22" fill-opacity="0.75"/>
+          </svg>
+        </div>
+        <p class="scene__caption"><span data-type>Jepang. Sebuah SMA. Musim dingin, tiga tahun yang lalu.</span><small>Pintu kelima Lin Qiushi</small></p>
+      </div>
+
+      <!-- 2 -->
+      <div class="scene" data-scene="photo" data-dur="3900">
+        <div class="scene__art">
+          <figure class="photo" aria-hidden="true">
+            <div class="photo__img" data-photo></div>
+            <figcaption class="photo__caption">二年二組 · Foto kelas</figcaption>
+          </figure>
+        </div>
+        <p class="scene__caption"><span data-type>Tiga puluh tiga wajah. Daftar kelas mencatat tiga puluh empat.</span></p>
+      </div>
+
+      <!-- 3 -->
+      <div class="scene" data-scene="lyric" data-dur="5000">
+        <div class="scene__art">
+          <ol class="lyric" aria-label="Potongan lagu Satchan">
+            <li>Namanya sebenarnya Sachiko,</li>
+            <li>tapi sejak kecil ia memanggil dirinya Satchan.</li>
+            <li>Ia hanya bisa makan separuh pisang kesukaannya.</li>
+            <li>Satchan sudah pergi ke tempat yang jauh…</li>
+          </ol>
+        </div>
+        <p class="scene__caption"><small>Lagu ejekan yang dikarang teman sekelasnya</small></p>
+      </div>
+
+      <!-- 4 -->
+      <div class="scene" data-scene="crawl" data-dur="4100" data-sfx="thud@0,thud@667,thud@1333,thud@2000,thud@2667,thud@3333">
+        <div class="scene__art">
+          <div class="crawl-wrap" aria-hidden="true">
+            <svg viewBox="0 0 1600 900"><use href="#tk-corridor"/></svg>
+            <svg class="crawler" viewBox="0 0 200 170"><use href="#tk-crawler"/></svg>
+            <p class="teke-sound">tek… tek… tek…</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="scene scene--verse" data-scene="verse" data-dur="3400" data-flash="250" data-sfx="sting@250">
+        <p class="verse">“Kakiku sudah hilang… maukah kau memberikan kakimu?”<small>Bait terakhir yang tidak boleh dinyanyikan</small></p>
+      </div>
+    </div>
+
+    <div class="cine__flash" data-flash aria-hidden="true"></div>
+    <div class="cine__ui">
+      <span class="cine__label">Tekan Esc untuk melewati</span>
+      <button class="btn-ghost" type="button" data-skip>Lewati adegan <span aria-hidden="true">›</span></button>
+    </div>
+    <div class="cine__progress" aria-hidden="true"><span data-cine-progress></span></div>
+  </div>
+
+  <!-- ================= PAGE ================= -->
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" data-leave aria-label="Kembali ke lorong pintu">
+      <svg viewBox="0 0 14 20" aria-hidden="true"><rect x="0.5" y="0.5" width="13" height="19" fill="none" stroke="currentColor"/><circle cx="10.5" cy="10.5" r="1" fill="currentColor"/></svg>
+      ← Lorong
+    </a>
+    <div class="topbar__actions">
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="arc-hero" aria-labelledby="arc-title">
+      <div class="arc-hero__bg" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><use href="#tk-corridor"/></svg>
+      </div>
+      <div class="arc-hero__inner">
+        <p class="eyebrow">Pintu V <span class="dot">◆</span> Bab 47–52 <span class="dot">◆</span> Kaleidoscope of Death</p>
+        <h1 id="arc-title" class="arc-title" data-arc-title>
+          <span class="arc-title__pre">Arc</span>
+          Teke Teke
+          <span class="arc-title__jp">さっちゃん · SATCHAN</span>
+        </h1>
+        <p class="lead arc-hero__lead">Sebuah lagu ejekan untuk gadis yang sudah mati. Semua yang menyanyikannya kehilangan kaki kiri, lalu nyawanya. Kini lagu itu dinyanyikan lagi.</p>
+        <div class="arc-hero__actions">
+          <a class="btn-solid" href="#ringkasan">Baca kisahnya</a>
+          <button class="btn-ghost" type="button" data-replay>↺ Putar ulang adegan</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="arc-body">
+      <nav class="toc" aria-label="Daftar isi">
+        <p class="eyebrow toc__label">Isi berkas</p>
+        <ol>
+          <li><a href="#ringkasan">Ringkasan</a></li>
+          <li><a href="#legenda">Legenda di balik pintu</a></li>
+          <li><a href="#aturan">Syarat kematian</a></li>
+          <li><a href="#kronologi">Kronologi</a></li>
+          <li><a href="#tokoh">Tokoh</a></li>
+          <li><a href="#kebenaran">Kebenaran</a></li>
+          <li><a href="#keluar">Kunci &amp; pintu keluar</a></li>
+        </ol>
+      </nav>
+
+      <article class="story">
+        <!-- 01 -->
+        <section id="ringkasan" aria-labelledby="h-ringkasan">
+          <div class="sec-head reveal">
+            <span class="sec-num">01 · Ringkasan</span>
+            <h2 id="h-ringkasan" class="sec-title">Sekolah yang menyembunyikan satu murid</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Lin Qiushi masuk ke pintu kelimanya bersama Ruan Nanzhu, yang menyamar sebagai <strong>Zhu Meng</strong>. Ikut pula <strong>Li Dongyuan</strong>, ketua organisasi White Deer, yang mengawal anggotanya, Xia Rubei. Sebelas orang tiba di gerbang sebuah SMA di Jepang. Mereka berperan sebagai tim kontraktor yang disewa untuk merenovasi gedung sekolah lama, tetapi pekerjaan baru boleh dimulai setelah ujian akhir murid kelas tiga selesai.</p>
+            <p>Kepala guru hanya berkata bahwa sekolah ini “sedang tidak tenang”. Mereka ditempatkan di asrama guru tua yang hampir dibongkar, yang dindingnya ditempeli jimat. Malam itu terdengar bunyi berdebum dari lantai atas, seperti seseorang <em>berkaki satu</em> yang melompat-lompat.</p>
+          </div>
+          <dl class="facts reveal" style="margin-top:28px">
+            <div><dt>Latar</dt><dd>SMA di Jepang, menjelang ujian akhir</dd></div>
+            <div><dt>Peran pemain</dt><dd>Kontraktor renovasi gedung lama</dd></div>
+            <div><dt>Jumlah pemain</dt><dd>11 orang</dd></div>
+            <div><dt>Entitas</dt><dd>Satchan (Sachiko), gadis tanpa kaki</dd></div>
+            <div><dt>Batas waktu</dt><dd>Ujian akhir kelas tiga</dd></div>
+            <div><dt>Kunci</dt><dd>Muncul dari abu foto kelas</dd></div>
+          </dl>
+          <div class="hint reveal">
+            <span class="hint__label">Petunjuk pintu</span>
+            <p class="hint__text">“Satchan”</p>
+            <p class="hint__note">Satu kata. Menurut Ruan Nanzhu, ini petunjuk yang bagus karena langsung menunjuk syarat kematiannya.</p>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="legenda" aria-labelledby="h-legenda">
+          <div class="sec-head reveal">
+            <span class="sec-num">02 · Legenda di balik pintu</span>
+            <h2 id="h-legenda" class="sec-title">Dari Teke Teke sampai Satchan</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Penggemar menyebut pintu ini <strong>Arc Teke Teke</strong> karena hantunya berasal dari keluarga legenda urban Jepang yang sama: gadis yang kehilangan tubuh bagian bawahnya dan menagih kaki dari orang hidup. Teke Teke merangkak dengan kedua tangan atau siku, dan suara langkahnya, <em>teke… teke…</em>, menjadi namanya.</p>
+            <p>Novel ini memakai varian yang lebih spesifik, yaitu <strong>Satchan</strong>. Konon ada lagu anak-anak tentang seorang gadis bernama Sachiko, dan beredar kabar tentang bait tambahan yang “tersembunyi”: Satchan kehilangan kakinya dalam kecelakaan, dan siapa pun yang menyanyikan bait itu akan didatangi Satchan untuk diambil kakinya.</p>
+          </div>
+          <div class="versus reveal">
+            <div>
+              <h3>Legenda urban</h3>
+              <p>Gadis yang tewas karena kecelakaan, kehilangan kaki atau separuh tubuhnya. Ia muncul di malam hari, merangkak cepat dengan kedua tangan, lalu mengambil kaki orang yang mengenal kisahnya.</p>
+            </div>
+            <div>
+              <h3>Versi di dalam pintu</h3>
+              <p>Satchan adalah Sachiko, murid yang dirundung sampai “dihapus” dari kelasnya. Ia mati karena kecelakaan yang disengaja. Teman sekelasnya lalu mengarang lagu ejekan tentang dirinya, dan lagu itulah yang menjadi kutukan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section id="aturan" aria-labelledby="h-aturan">
+          <div class="sec-head reveal">
+            <span class="sec-num">03 · Syarat kematian</span>
+            <h2 id="h-aturan" class="sec-title">Jangan bernyanyi</h2>
+          </div>
+          <ol class="deathrules" role="list">
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">一</span>
+              <div>
+                <h3>Menyanyikan lagu Satchan</h3>
+                <p>Inilah syarat utamanya. Semua murid kelas itu yang ikut menyanyikan lagu ejekan tewas. Bait terakhirnya berbunyi “kakiku sudah hilang, maukah kau memberikan kakimu?”, dan setelah itu Satchan datang menagih.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">二</span>
+              <div>
+                <h3>Kaki kiri yang hilang</h3>
+                <p>Korban ditemukan bermandikan darah dengan kaki kiri terputus. Pada malam pertama, sepasang pemain yang merobek jimat dari dinding kamar asrama tewas dengan cara itu. Di dekat mereka ada secarik kertas penuh darah bertuliskan potongan lirik: “pisang… kesepian…”.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">三</span>
+              <div>
+                <h3>Bunyi satu kaki</h3>
+                <p>Tanda bahaya: bunyi debam tak beraturan yang berpindah dari ujung ke ujung lorong. Lin Qiushi, yang pendengarannya tajam, mengenalinya sebagai seseorang berkaki satu yang sedang melompat.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">四</span>
+              <div>
+                <h3>Tenggat: ujian akhir</h3>
+                <p>Ruan Nanzhu menyimpulkan bahwa ujian akhir adalah ujian masuk universitas. Setelah itu, saksi kunci tidak lagi menjadi murid sekolah ini. Kalau kunci belum ditemukan sampai saat itu, waktu bisa berulang, atau para hantu akan mengamuk.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 04 -->
+        <section id="kronologi" aria-labelledby="h-kronologi">
+          <div class="sec-head reveal">
+            <span class="sec-num">04 · Kronologi</span>
+            <h2 id="h-kronologi" class="sec-title">Hari demi hari di sekolah itu</h2>
+          </div>
+          <ol class="timeline" role="list">
+            <li class="tl reveal">
+              <span class="tl__when">Hari pertama · pagi</span>
+              <h3>Sebelas orang di depan gerbang</h3>
+              <p>Bel pagi berbunyi dan murid-murid mengalir masuk seolah muncul dari udara kosong. Kepala guru mengantar para pemain ke asrama tua yang kotor dan memberi kunci gedung sekolah lama di tepi lapangan.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari pertama · gedung lama</span>
+              <h3>Gedung lama yang tidak tua</h3>
+              <p>Gedung itu disegel larangan masuk, padahal umurnya baru enam atau tujuh tahun. Dari lantai atas terdengar debam berpindah-pindah. Ruan Nanzhu melihat bahwa rombongan lain yang mereka kira ada di atas ternyata sedang berdiri di lantai bawah.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Malam pertama</span>
+              <h3>Korban pertama</h3>
+              <p>Wu Xuelin mendengar debam itu mendekat. Sepasang tangan dingin mencengkeram bahunya, lalu kaki kirinya terlepas. Paginya darah merembes dari celah pintu kamar sebelah: dua pemain lain tewas, juga tanpa kaki kiri.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Penyelidikan · ruang arsip</span>
+              <h3>Foto di ruang arsip</h3>
+              <p>Di arsip sekolah ada berkas kelas 2 angkatan tiga tahun lalu. Biodatanya tercatat 34 orang, tetapi foto kelasnya hanya berisi 33 wajah, dan satu halaman biodata dirobek. Ruan Nanzhu mengenali salah satu wajah di foto: <strong>Ko Shinobu</strong>, murid kelas 3-3 yang mereka temui di kantin.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Penyelidikan · ruang kelas 3-3</span>
+              <h3>Pengakuan setengah jujur</h3>
+              <p>Ko Shinobu bercerita bahwa Sachiko dirundung, dianggap tidak ada, lalu “mengalami kecelakaan”. Sekelasnya mengarang lagu tentang dia, dan semua yang menyanyikannya mati. Ia mengaku tidak ikut bernyanyi karena “merasa itu keterlaluan”. Lin Qiushi dan Li Dongyuan sama-sama yakin ia berbohong.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Menjelang malam · lantai empat</span>
+              <h3>Pemain baru menghilang</h3>
+              <p>Seorang pemain baru lenyap di lantai empat gedung lama, di ruang paling ujung yang papan namanya bertuliskan “Kelas 2”. Pintu-pintu yang terbuka tanpa seorang pun di dalamnya menjadi kabar buruk tersendiri.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Pesan dari Satchan</span>
+              <h3>Dua foto yang berbeda</h3>
+              <p>Satchan meninggalkan foto kedua. Di foto pertama Sachiko tidak ada. Di foto kedua justru Ko Shinobu dan temannya yang tidak ada, sementara murid lain berdiri di posisi yang persis sama.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Jam makan siang · hutan belakang</span>
+              <h3>Mougai bernyanyi</h3>
+              <p>Di hutan kecil di belakang sekolah, Li Dongyuan menghipnosis <strong>Mougai</strong>, sahabat Ko Shinobu. Mougai mengakui segalanya, lalu menyanyikan lagu itu sampai bait terakhir. Tangan-tangan pucat mencuat dari tanah. Satchan merangkak keluar dari hutan dan mencabut kaki kirinya.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Jam istirahat · toilet lantai empat</span>
+              <h3>Jatuh dari lantai empat</h3>
+              <p>Ko Shinobu bersembunyi di balkon di luar jendela toilet sambil menggenggam pisau. Lin Qiushi menemukannya. Ko Shinobu terpeleset dan bergantung di tepi balkon, lalu tangan yang tidak terlihat melepaskan jarinya satu per satu.</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 05 -->
+        <section id="tokoh" aria-labelledby="h-tokoh">
+          <div class="sec-head reveal">
+            <span class="sec-num">05 · Tokoh</span>
+            <h2 id="h-tokoh" class="sec-title">Yang masuk, dan yang menunggu</h2>
+          </div>
+          <div class="cast">
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Lin Qiushi</h3>
+              <p class="person__alias">Nama di dalam pintu: Yu Linlin</p>
+              <p>Tokoh utama. Pendengarannya luar biasa tajam. Dialah yang pertama mengenali bunyi “orang berkaki satu”.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Ruan Nanzhu</h3>
+              <p class="person__alias">Menyamar sebagai “Zhu Meng”</p>
+              <p>Pemimpin Obsidian yang suka bersandiwara. Ia membaca tanda di foto kelas dan menyimpulkan tenggat ujian akhir.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain · White Deer</span>
+              <h3>Li Dongyuan</h3>
+              <p class="person__alias">Nama di dalam pintu: Meng Yu</p>
+              <p>Ketua White Deer, pesaing Obsidian. Berwajah polos di dunia nyata, tetapi lihai di dalam pintu. Ia menggunakan hipnosis untuk memaksa Mougai mengaku.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain · White Deer</span>
+              <h3>Xia Rubei</h3>
+              <p class="person__alias">Pintu keempatnya</p>
+              <p>Anggota White Deer yang dikawal Li Dongyuan. Ia tampak rapuh dan penakut, dan berkali-kali bersitegang dengan “Zhu Meng”.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Hantu</span>
+              <h3>Sachiko · Satchan</h3>
+              <p class="person__alias">Murid kelas 2, tiga tahun lalu</p>
+              <p>Gadis yang dirundung dan “dihapus” dari kelasnya. Kini ia merangkak dengan kedua tangan dan menagih kaki orang-orang yang menertawakannya.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">NPC</span>
+              <h3>Ko Shinobu</h3>
+              <p class="person__alias">Kelas 3-3</p>
+              <p>Satu dari dua mantan teman sekelas Sachiko yang masih hidup. Ia yang menyebut Sachiko sebagai “orang yang seharusnya tidak ada”.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">NPC</span>
+              <h3>Mougai</h3>
+              <p class="person__alias">Sahabat Ko Shinobu</p>
+              <p>Bertubuh lebih besar dan mudah marah. Ia pindah kelas setelah “kecelakaan” itu, dan ketakutannya pada lagu itu terlihat jelas.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="kebenaran" aria-labelledby="h-kebenaran">
+          <div class="sec-head reveal">
+            <span class="sec-num">06 · Kebenaran</span>
+            <h2 id="h-kebenaran" class="sec-title">Kecelakaan yang bukan kecelakaan</h2>
+          </div>
+          <div class="truth reveal" data-truth>
+            <div class="truth__gate">
+              <p>Spoiler: inti misteri</p>
+              <button class="btn-solid" type="button" data-truth-btn>Ungkap kebenaran</button>
+            </div>
+            <div class="truth__body prose">
+              <p>Kelas Sachiko menghapusnya secara menyeluruh. Tidak ada yang mau bicara dengannya, tidak ada yang mau berfoto dengannya, dan kepada pihak luar kelas itu mengaku hanya punya <strong>33 murid</strong>, padahal ada 34 nama di daftar.</p>
+              <p>Pada suatu hari musim dingin, Ko Shinobu dan Mougai berniat mendorong Sachiko ke tempat sampah sebagai lelucon. Mereka malah mendorongnya ke tengah jalan. Sebuah mobil menabraknya dan ia kehilangan satu kaki. Keduanya sebenarnya masih bisa menolong, tetapi mereka kabur tanpa menelepon ambulans. Sachiko ditinggal di malam yang membeku sampai mati.</p>
+              <p>Sesudah itu teman-teman sekelasnya tidak berduka. Mereka malah mengarang lagu ejekan tentang Sachiko. Semua yang menyanyikannya tewas satu per satu. Hanya dua pembunuhnya yang selamat, karena mereka terlalu takut untuk ikut bernyanyi.</p>
+              <blockquote class="pull">Karena aku tak pernah bisa berfoto bersama kalian semasa hidup, penuhilah keinginanku setelah mati.</blockquote>
+              <p>Begitulah Li Dongyuan menafsirkan pesan Satchan. Yang ia inginkan hanyalah <strong>foto kelas yang lengkap</strong>. Setiap kali seorang pembunuhnya tewas, wajah orang itu muncul di foto, berdiri kaku di samping Satchan yang senyumnya makin lebar. Setelah Ko Shinobu jatuh, foto itu akhirnya berisi 34 orang, tidak kurang satu pun.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section id="keluar" aria-labelledby="h-keluar">
+          <div class="sec-head reveal">
+            <span class="sec-num">07 · Kunci &amp; pintu keluar</span>
+            <h2 id="h-keluar" class="sec-title">Hantu yang menepati janji</h2>
+          </div>
+          <div class="exit reveal">
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <circle cx="22" cy="30" r="16" fill="none" stroke="#7aa58f" stroke-width="6"/>
+              <rect x="36" y="27" width="76" height="7" fill="#7aa58f"/>
+              <rect x="92" y="34" width="6" height="12" fill="#7aa58f"/>
+              <rect x="104" y="34" width="6" height="16" fill="#7aa58f"/>
+            </svg>
+            <div class="prose">
+              <p>Begitu foto kelas lengkap, foto itu tiba-tiba terbakar. Di antara abunya berdenting <strong>sebuah kunci</strong>. Sebelumnya, setelah merenggut kaki Mougai, Satchan sempat menunjuk ke satu arah dan mengangkat satu jari: <em>tinggal satu lagi</em>. Arah itu menuju bekas ruang Kelas 2, yang pintu antimalingnya kini sudah berubah menjadi pintu besi.</p>
+              <p>Tidak ada makhluk yang menjaga pintu kali ini. Ruan Nanzhu menyerahkan kuncinya kepada Li Dongyuan, dan Xia Rubei yang membuka pintu itu menuju lorong putih.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <nav class="arc-nav" aria-label="Pintu lain">
+    <a href="index.html" data-leave>
+      <span class="arc-nav__dir">← Kembali</span>
+      <span class="arc-nav__name">Lorong Spirealm</span>
+    </a>
+    <a href="arc-minator.html" data-leave>
+      <span class="arc-nav__dir">Pintu berikutnya →</span>
+      <span class="arc-nav__name">Arc Minator</span>
+    </a>
+  </nav>
+
+  <footer class="sources">
+    <p><strong>Sumber:</strong> <em>Kaleidoscope of Death</em> (死亡万花筒) karya Xi Zi Xu, bab 47 “Drama School” sampai bab 52 “Leaving” (terjemahan Inggris di WebNovel). Ringkasan ditulis ulang dalam bahasa Indonesia. Nama tokoh mengikuti terjemahan tersebut.</p>
+    <p>Lagu dalam adegan pembuka adalah parafrase bebas dari versi yang muncul di novel.</p>
+  </footer>
+
+  <script>
+    window.arcHooks = {
+      winter(scene) {
+        const c = scene.querySelector("[data-snow]");
+        const ctx = c.getContext("2d");
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const resize = () => { c.width = c.clientWidth * dpr; c.height = c.clientHeight * dpr; };
+        resize();
+        const flakes = Array.from({ length: 140 }, () => ({
+          x: Math.random(), y: Math.random(), r: 0.6 + Math.random() * 2.2,
+          s: 0.0006 + Math.random() * 0.0016, w: Math.random() * Math.PI * 2
+        }));
+        let id;
+        const draw = () => {
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.fillStyle = "rgba(220,232,242,0.8)";
+          flakes.forEach(f => {
+            f.y += f.s; f.w += 0.01;
+            if (f.y > 1.02) { f.y = -0.02; f.x = Math.random(); }
+            ctx.beginPath();
+            ctx.arc((f.x + Math.sin(f.w) * 0.01) * c.width, f.y * c.height, f.r * dpr, 0, Math.PI * 2);
+            ctx.fill();
+          });
+          id = requestAnimationFrame(draw);
+        };
+        draw();
+        window.addEventListener("resize", resize);
+        return () => { cancelAnimationFrame(id); window.removeEventListener("resize", resize); };
+      }
+    };
+    // Build the class photo: 3 rows of 11, plus the one who was never in it.
+    (function () {
+      const img = document.querySelector("[data-photo]");
+      for (let r = 0; r < 3; r++) {
+        const row = document.createElement("div");
+        row.className = "photo__row";
+        for (let i = 0; i < 11; i++) {
+          const p = document.createElement("span");
+          p.className = "photo__p";
+          row.appendChild(p);
+        }
+        if (r === 2) {
+          const gone = document.createElement("span");
+          gone.className = "photo__p photo__p--gone";
+          row.appendChild(gone);
+        }
+        img.appendChild(row);
+      }
+    })();
+  </script>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/arc.js"></script>
+</body>
+</html>

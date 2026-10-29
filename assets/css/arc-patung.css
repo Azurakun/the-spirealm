@@ -1,0 +1,152 @@
+/* Arc Patung — plaster studio, gallery light, dried blood */
+
+.arc--patung {
+  background:
+    radial-gradient(ellipse 50% 40% at 70% 10%, rgba(240, 232, 218, 0.07), transparent 70%),
+    var(--tint);
+}
+.arc--patung .arc-title { font-style: italic; font-size: clamp(3.4rem, 1.8rem + 8vw, 8.5rem); }
+.arc--patung .arc-title__pre { font-style: normal; }
+.arc--patung .person h3 { font-style: italic; font-weight: 500; font-size: 1.45rem; }
+.arc--patung .deathrule__mark { font-style: italic; font-weight: 400; }
+
+/* ---------- Scene 1: gallery ---------- */
+.scene--gallery { background: radial-gradient(ellipse 80% 60% at 50% 30%, #1d1b18, #050505 75%); }
+.gallery { display: flex; align-items: flex-end; gap: clamp(6px, 2vw, 22px); }
+.gallery svg { width: clamp(54px, 13vw, 140px); height: auto; filter: brightness(0.35); transition: filter 0.4s; }
+.scene.is-active .gallery svg { animation: spot 3.6s ease-in-out forwards; }
+.scene.is-active .gallery svg:nth-child(2) { animation-delay: 0.35s; }
+.scene.is-active .gallery svg:nth-child(3) { animation-delay: 0.7s; }
+.scene.is-active .gallery svg:nth-child(4) { animation-delay: 1.05s; }
+.scene.is-active .gallery svg:nth-child(5) { animation-delay: 1.4s; }
+@keyframes spot {
+  0% { filter: brightness(0.3); }
+  30% { filter: brightness(1.05) drop-shadow(0 0 20px rgba(255, 245, 225, 0.25)); }
+  60%, 100% { filter: brightness(0.4); }
+}
+.gallery svg:nth-child(odd) { transform: translateY(-14px); }
+
+/* ---------- Scene 2: doll ---------- */
+.doll-wrap { position: relative; width: min(46vw, 220px); }
+.doll-wrap svg { width: 100%; height: auto; }
+.drop {
+  position: absolute;
+  left: 48%;
+  top: -30%;
+  width: 14px;
+  height: 20px;
+  background: #8e1410;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0;
+  box-shadow: 0 0 10px rgba(142, 20, 16, 0.7);
+}
+.scene.is-active .drop { animation: drip 1.4s cubic-bezier(0.5, 0, 0.9, 0.6) 0.8s forwards; }
+@keyframes drip {
+  0% { opacity: 1; transform: translateY(0) scaleY(1.2); }
+  85% { opacity: 1; transform: translateY(150px) scaleY(1.1); }
+  100% { opacity: 0; transform: translateY(160px) scale(2.2, 0.3); }
+}
+.doll-stain { opacity: 0; }
+.scene.is-active .doll-stain { animation: stain 0.6s ease-out 2.1s forwards; }
+@keyframes stain { to { opacity: 0.9; } }
+
+/* ---------- Scene 3: unveil ---------- */
+.unveil { position: relative; width: min(70vw, 340px); overflow: hidden; }
+.unveil svg { width: 100%; height: auto; display: block; }
+.cloth { transform-origin: 50% 0; }
+.scene.is-active .cloth { animation: drop-cloth 1.8s cubic-bezier(0.6, 0, 0.4, 1) 1s forwards; }
+@keyframes drop-cloth {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-3%) skewX(-2deg); }
+  100% { transform: translateY(105%) skewX(4deg); }
+}
+
+/* ---------- Scene 4: alive ---------- */
+.alive { position: relative; width: min(72vw, 360px); }
+.alive svg { width: 100%; height: auto; }
+.scene.is-active .alive svg { animation: breathe 1.2s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: scale(1.012); } }
+.eyes-open, .smile { transition: none; }
+.eyes-open { opacity: 0; }
+.scene.is-active .eyes-open { animation: open 0.18s linear 1.6s forwards; }
+.scene.is-active .eyes-closed { animation: close 0.18s linear 1.6s forwards; }
+.scene.is-active .smile { animation: unsmile 1.2s ease 0.4s forwards; }
+@keyframes open { from { opacity: 0; } to { opacity: 1; } }
+@keyframes close { from { opacity: 1; } to { opacity: 0; } }
+@keyframes unsmile { to { d: path("M182 226 L218 226"); } }
+.heartbeat {
+  position: absolute;
+  right: -6%;
+  top: 6%;
+  margin: 0;
+  font-family: var(--f-arc);
+  font-style: italic;
+  font-size: clamp(1.2rem, 0.9rem + 1.5vw, 2rem);
+  color: var(--accent);
+  opacity: 0;
+}
+.scene.is-active .heartbeat { animation: beat 1.2s ease-out 0.3s infinite; }
+@keyframes beat {
+  0% { opacity: 0; transform: scale(0.9); }
+  15% { opacity: 1; transform: scale(1.08); }
+  60%, 100% { opacity: 0; transform: scale(1); }
+}
+
+/* ---------- Scene 5: shatter ---------- */
+.scene--shatter { background: #050404; }
+.shatter { position: relative; width: min(72vw, 360px); }
+.shatter svg { width: 100%; height: auto; }
+.crack {
+  fill: none;
+  stroke: #120d0a;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+.scene--shatter.is-active .crack { animation: crack-draw 0.9s ease-out forwards; }
+.scene--shatter.is-active .crack:nth-of-type(2) { animation-delay: 0.25s; }
+.scene--shatter.is-active .crack:nth-of-type(3) { animation-delay: 0.45s; }
+.scene--shatter.is-active .crack:nth-of-type(4) { animation-delay: 0.6s; }
+.scene--shatter.is-active .crack:nth-of-type(5) { animation-delay: 0.75s; }
+@keyframes crack-draw { to { stroke-dashoffset: 0; } }
+.tear { stroke-dasharray: 160; stroke-dashoffset: 160; }
+.scene--alive.is-active .tear, .scene--shatter .tear { animation: crack-draw 1.2s ease-in 0.2s forwards; }
+.scene.is-active .shatter svg { animation: fall-apart 0.9s ease-in 2.2s forwards; }
+@keyframes fall-apart {
+  0% { transform: none; opacity: 1; filter: none; }
+  30% { transform: translate(3px, -2px) rotate(0.6deg); }
+  100% { transform: translateY(40px) scale(0.96); opacity: 0; filter: blur(3px); }
+}
+.verdict {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0 var(--gutter);
+  text-align: center;
+  font-family: var(--f-arc);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 1.1rem + 3.6vw, 4.2rem);
+  line-height: 1.15;
+  color: #f2ece2;
+  opacity: 0;
+}
+.scene.is-active .verdict { animation: verdict 1s ease-out 2.6s forwards; }
+@keyframes verdict { from { opacity: 0; letter-spacing: 0.08em; } to { opacity: 1; letter-spacing: 0; } }
+.verdict small {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene.is-active .alive svg { animation: none; }
+}

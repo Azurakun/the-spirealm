@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Minator — Pintu XIII · The Spirealm</title>
+  <meta name="description" content="Arc Minator (Minotaur): pintu ketiga belas Lin Qiushi dalam Kaleidoscope of Death. Sebuah kapal di laut tak bertepi, empat belas penumpang, dan labirin yang berpindah setiap lima menit.">
+  <meta name="theme-color" content="#041214">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect x='1' y='1' width='18' height='26' fill='%235a3a22' stroke='%23d9b04a'/%3E%3Ccircle cx='15' cy='15' r='1.5' fill='%23e9e2d6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English+SC&family=Special+Elite&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/arc.css">
+  <link rel="stylesheet" href="assets/css/arc-minator.css">
+</head>
+<body class="atmos arc arc--minator is-locked" data-drone="41">
+  <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
+  <div class="read-progress" data-read-progress aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="mn-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#010506"/>
+        <stop offset="0.6" stop-color="#0a2a2b"/>
+        <stop offset="1" stop-color="#020809"/>
+      </linearGradient>
+      <radialGradient id="mn-moon" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#cfe0d4" stop-opacity="0.35"/>
+        <stop offset="1" stop-color="#cfe0d4" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="mn-eye" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#f1efe2"/>
+        <stop offset="0.7" stop-color="#bfc4b1"/>
+        <stop offset="1" stop-color="#5d6a56"/>
+      </radialGradient>
+      <symbol id="mn-sea" viewBox="0 0 1600 900">
+        <rect width="1600" height="900" fill="url(#mn-sky)"/>
+        <circle cx="1220" cy="190" r="260" fill="url(#mn-moon)"/>
+        <circle cx="1220" cy="190" r="34" fill="#cfd9c9" fill-opacity="0.55"/>
+        <!-- the ship -->
+        <g class="ship" fill="#010304">
+          <path d="M520 500 L1080 500 L1030 575 L590 575 Z"/>
+          <path d="M960 462 L1090 462 L1080 500 L960 500 Z"/>
+          <path d="M520 500 L470 470 L540 488 Z"/>
+          <rect x="694" y="260" width="7" height="242"/>
+          <rect x="818" y="210" width="8" height="292"/>
+          <rect x="938" y="280" width="7" height="222"/>
+          <path d="M650 290 L745 296 L738 360 L760 420 L655 410 L668 360 Z" fill="#0b1615"/>
+          <path d="M766 240 L880 246 L872 320 L890 400 L770 392 L782 320 Z" fill="#0b1615"/>
+          <path d="M894 310 L985 316 L980 370 L990 430 L898 424 L906 370 Z" fill="#0b1615"/>
+          <circle cx="1010" cy="478" r="4" fill="#d9b04a"/>
+          <circle cx="610" cy="520" r="3" fill="#d9b04a" fill-opacity="0.6"/>
+          <g fill="#000"><circle cx="660" cy="545" r="5"/><circle cx="740" cy="545" r="5"/><circle cx="820" cy="545" r="5"/><circle cx="900" cy="545" r="5"/></g>
+        </g>
+        <!-- something under the water -->
+        <path class="wave" d="M300 690 C420 640 640 640 760 690 C700 720 520 730 300 690 Z M760 690 L820 650 L812 690 L830 730 Z" fill="#000" fill-opacity="0.55"/>
+        <path class="wave" d="M0 575 Q100 555 200 575 T400 575 T600 575 T800 575 T1000 575 T1200 575 T1400 575 T1600 575 T1800 575 T2000 575 V900 H0 Z" fill="#06191a"/>
+        <path class="wave wave--2" d="M0 625 Q120 600 240 625 T480 625 T720 625 T960 625 T1200 625 T1440 625 T1680 625 T1920 625 T2160 625 V900 H0 Z" fill="#041213" fill-opacity="0.9"/>
+        <path class="wave wave--3" d="M0 700 Q150 675 300 700 T600 700 T900 700 T1200 700 T1500 700 T1800 700 T2100 700 V900 H0 Z" fill="#020a0b"/>
+      </symbol>
+
+      <symbol id="mn-man" viewBox="0 0 40 84"><path d="M20 2 a8 8 0 1 1 0 16 a8 8 0 1 1 0-16 Z M9 22 H31 L33 50 H27 L26 82 H22 L20 54 L18 82 H14 L13 50 H7 Z"/></symbol>
+      <symbol id="mn-woman" viewBox="0 0 40 84"><path d="M20 2 a8 8 0 1 1 0 16 a8 8 0 1 1 0-16 Z M12 22 H28 L36 62 H26 L25 82 H22 L20 64 L18 82 H15 L14 62 H4 Z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= CINEMATIC ================= -->
+  <div class="cine" data-cine role="region" aria-label="Adegan pembuka Arc Minator">
+    <div class="cine__top">
+      <span class="eyebrow">Pintu XIII <span class="dot">◆</span> Minotaur</span>
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+
+    <div class="cine__stage">
+      <!-- 1 -->
+      <div class="scene scene--sea" data-scene="sea" data-dur="3800" data-sfx="wave@100">
+        <svg class="sea-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#mn-sea"/></svg>
+        <div class="fog" aria-hidden="true"></div>
+        <p class="scene__caption"><span data-type>Sebuah kapal. Laut tanpa tepi. Tak ada daratan untuk pulang.</span><small>Pintu ketiga belas Lin Qiushi</small></p>
+      </div>
+
+      <!-- 2 -->
+      <div class="scene" data-scene="tribute" data-dur="3800">
+        <div class="scene__art">
+          <div class="tribute" aria-hidden="true">
+            <div class="tribute__row" data-row="m"></div>
+            <div class="tribute__row" data-row="f"></div>
+          </div>
+        </div>
+        <p class="scene__caption"><span data-type>Tujuh lelaki. Tujuh perempuan. Persis jumlah tumbal untuk Minotaur.</span></p>
+      </div>
+
+      <!-- 3 -->
+      <div class="scene" data-scene="rooms" data-dur="3800">
+        <div class="scene__art">
+          <div class="rooms" data-rooms aria-hidden="true"></div>
+        </div>
+        <p class="scene__caption"><span data-type>Setiap lima menit, kamar-kamar berpindah tempat.</span><small>Kapal ini adalah labirin</small></p>
+      </div>
+
+      <!-- 4 -->
+      <div class="scene" data-scene="maze" data-dur="4200">
+        <div class="scene__art">
+          <svg class="maze-svg" viewBox="-20 -30 460 460" aria-hidden="true">
+            <path class="walls" d="M80 0 H400 V320 M400 400 H0 V0 M80 0 V160 M160 80 V240 H80 M0 320 H160 M240 0 V80 M240 160 H320 V80 M320 240 H400 M240 240 V400 M80 400 V360 M160 400 V360"/>
+            <polyline class="thread" points="40,-20 40,280 200,280 200,120 280,120 280,40 360,40 360,200 280,200 280,360 420,360"/>
+            <circle class="goal" cx="424" cy="360" r="9"/>
+          </svg>
+        </div>
+        <p class="scene__caption">Benang. Pedang. Hidangan pembuka.<small>Tiga benda dalam mitos Theseus</small></p>
+      </div>
+
+      <!-- 5 -->
+      <div class="scene scene--eye" data-scene="eye" data-dur="3600" data-flash="1700" data-sfx="sting@1700">
+        <div class="scene__art">
+          <svg class="eye-svg" viewBox="0 0 520 300" aria-hidden="true">
+            <clipPath id="mn-eyeclip"><circle cx="260" cy="150" r="150"/></clipPath>
+            <g clip-path="url(#mn-eyeclip)">
+            <ellipse cx="260" cy="150" rx="150" ry="150" fill="url(#mn-eye)"/>
+            <circle class="pupil" cx="260" cy="150" r="56" fill="#060807"/>
+            <circle cx="232" cy="122" r="10" fill="#fff" fill-opacity="0.5"/>
+            <rect class="lid-top" x="80" y="-10" width="360" height="160" fill="#000"/>
+            <rect class="lid-bot" x="80" y="150" width="360" height="170" fill="#000"/>
+            </g>
+          </svg>
+        </div>
+        <p class="scene__caption">Di ujung labirin, sesuatu sedang makan.</p>
+      </div>
+    </div>
+
+    <div class="cine__flash" data-flash aria-hidden="true"></div>
+    <div class="cine__ui">
+      <span class="cine__label">Tekan Esc untuk melewati</span>
+      <button class="btn-ghost" type="button" data-skip>Lewati adegan <span aria-hidden="true">›</span></button>
+    </div>
+    <div class="cine__progress" aria-hidden="true"><span data-cine-progress></span></div>
+  </div>
+
+  <!-- ================= PAGE ================= -->
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" data-leave aria-label="Kembali ke lorong pintu">
+      <svg viewBox="0 0 14 20" aria-hidden="true"><rect x="0.5" y="0.5" width="13" height="19" fill="none" stroke="currentColor"/><circle cx="10.5" cy="10.5" r="1" fill="currentColor"/></svg>
+      ← Lorong
+    </a>
+    <div class="topbar__actions">
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="arc-hero" aria-labelledby="arc-title">
+      <div class="arc-hero__bg" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><use href="#mn-sea"/></svg>
+      </div>
+      <div class="arc-hero__inner">
+        <p class="eyebrow">Pintu XIII <span class="dot">◆</span> Bab 120–126 <span class="dot">◆</span> Kaleidoscope of Death</p>
+        <h1 id="arc-title" class="arc-title" data-arc-title>
+          <span class="arc-title__pre">Arc</span>
+          Minator
+          <span class="arc-title__gr">ΜΙΝΩΤΑΥΡΟΣ · MINOTAUR</span>
+        </h1>
+        <p class="lead arc-hero__lead">Empat belas orang di atas kapal yang berbau ikan busuk. Lorongnya berpindah setiap lima menit, dan setiap malam sesuatu berkepala ikan meminta tumbalnya.</p>
+        <div class="arc-hero__actions">
+          <a class="btn-solid" href="#ringkasan">Baca kisahnya</a>
+          <button class="btn-ghost" type="button" data-replay>↺ Putar ulang adegan</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="arc-body">
+      <nav class="toc" aria-label="Daftar isi">
+        <p class="eyebrow toc__label">Isi berkas</p>
+        <ol>
+          <li><a href="#ringkasan">Ringkasan</a></li>
+          <li><a href="#legenda">Mitos di balik pintu</a></li>
+          <li><a href="#aturan">Syarat kematian</a></li>
+          <li><a href="#kronologi">Kronologi</a></li>
+          <li><a href="#tokoh">Tokoh</a></li>
+          <li><a href="#kebenaran">Kebenaran</a></li>
+          <li><a href="#keluar">Kunci &amp; pintu keluar</a></li>
+        </ol>
+      </nav>
+
+      <article class="story">
+        <!-- 01 -->
+        <section id="ringkasan" aria-labelledby="h-ringkasan">
+          <div class="sec-head reveal">
+            <span class="sec-num">01 · Ringkasan</span>
+            <h2 id="h-ringkasan" class="sec-title">Labirin yang mengapung</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Petunjuk pintu ketiga belas hanya satu nama yang dikenal semua orang: <strong>Minotaur</strong>, makhluk setengah manusia setengah banteng yang dikurung di dalam Labirin. Lin Qiushi masuk bersama Ruan Nanzhu, yang lagi-lagi menyamar sebagai kekasihnya, “Zhu Meng”, dan sahabat mereka <strong>Gu Longming</strong>.</p>
+            <p>Mereka terbangun di atas kapal kayu besar di tengah laut yang tak bertepi. Kapal itu cukup untuk ratusan orang dan punya meriam tersembunyi di bawah dek, tetapi tanpa amunisi. Satu-satunya makanan adalah <em>ikan mati yang sudah basi</em>, dan bangkai ikan digantung berderet di sisi kapal. Di salah satu kamar ada pintu yang sedikit terbuka. Dari celahnya, sepasang mata kuning menatap balik.</p>
+          </div>
+          <dl class="facts reveal" style="margin-top:28px">
+            <div><dt>Latar</dt><dd>Kapal kayu di laut tanpa daratan</dd></div>
+            <div><dt>Jumlah pemain</dt><dd>14 orang (7 lelaki, 7 “perempuan”)</dd></div>
+            <div><dt>Makanan</dt><dd>Hanya ikan mati, mi hambar, dan kacang polong</dd></div>
+            <div><dt>Entitas</dt><dd>Manusia ikan bermata putih, dan satu lagi bermata kuning</dd></div>
+            <div><dt>Labirin</dt><dd>Kamar berpindah sekitar setiap 5 menit</dd></div>
+            <div><dt>Kunci</dt><dd>Di dalam perut Minotaur</dd></div>
+          </dl>
+          <div class="hint reveal">
+            <span class="hint__label">Petunjuk pintu</span>
+            <p class="hint__text">“Minotaur”</p>
+            <p class="hint__note">Petunjuk seperti ini nyaris tak memberi informasi. Maknanya baru terbaca setelah mereka melihat sendiri isi pintunya.</p>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="legenda" aria-labelledby="h-legenda">
+          <div class="sec-head reveal">
+            <span class="sec-num">02 · Mitos di balik pintu</span>
+            <h2 id="h-legenda" class="sec-title">Theseus, Ariadne, dan tumbal dari Athena</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Dalam mitologi Yunani, Minotaur dikurung di Labirin di Pulau Kreta. Athena harus mengirim <strong>tujuh pemuda dan tujuh gadis</strong> sebagai tumbal untuknya. Theseus masuk ke Labirin dengan segulung benang pemberian Ariadne supaya bisa menemukan jalan pulang, lalu membunuh Minotaur dengan pedang.</p>
+            <p>Pintu ini menerjemahkan setiap unsur mitos itu menjadi teka-teki. Para pemain harus menemukan ketiganya: <em>benang, pedang, dan hidangan pembuka</em>.</p>
+          </div>
+          <div class="versus reveal">
+            <div>
+              <h3>Mitos Yunani</h3>
+              <p>Minotaur bertubuh manusia dan berkepala banteng. Labirin di Kreta. Tujuh pemuda dan tujuh gadis sebagai tumbal. Benang Ariadne untuk menemukan jalan. Pedang Theseus untuk membunuhnya.</p>
+            </div>
+            <div>
+              <h3>Versi di dalam pintu</h3>
+              <p>Minotaur berkepala ikan dengan insang yang berdenyut di lehernya. Labirinnya adalah kapal yang kamar-kamarnya berpindah. Penumpangnya 14 orang. Benangnya serangga yang tertarik pada darah. Pedangnya tanduk monster kedua. Hidangan pembukanya ikan busuk di perut manusia.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section id="aturan" aria-labelledby="h-aturan">
+          <div class="sec-head reveal">
+            <span class="sec-num">03 · Syarat kematian</span>
+            <h2 id="h-aturan" class="sec-title">Aturan kapal</h2>
+          </div>
+          <ol class="deathrules" role="list">
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">I</span>
+              <div>
+                <h3>Jangan meninggalkan kapal</h3>
+                <p>Xiao Mo, pemain baru, mencoba kabur bersama seorang teman dengan satu-satunya sekoci. Air di bawah mereka menghitam, lalu ekor ikan raksasa sebesar kapal menghantam sekoci sampai hancur. Itu baru peringatan. Laut tidak memberi kesempatan kedua.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">II</span>
+              <div>
+                <h3>Siapa yang makan ikan, dimakan</h3>
+                <p>Monster itu memburu dengan penciuman. Orang yang perutnya penuh ikan berbau seperti santapan. Ruan Nanzhu memakai sisik ikan dari kamar monster untuk mengalihkan perhatiannya saat mereka dikejar.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">III</span>
+              <div>
+                <h3>Labirin yang bergeser</h3>
+                <p>Kecuali ruang makan dan dapur, setiap kamar berpindah sekitar lima menit sekali. Sebelumnya pintu-pintu diselimuti kabut tipis dan nomornya berubah. Orang yang berada di dalam kamar tidak terluka, tetapi barang yang tertinggal mungkin tak akan pernah ditemukan lagi.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">IV</span>
+              <div>
+                <h3>Tumbal setiap malam</h3>
+                <p>Setiap malam Minotaur membutuhkan persembahan. Jika batas waktunya lewat, ia akan mengamuk dan membantai beramai-ramai. Mencari kunci berlomba dengan jumlah korban.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 04 -->
+        <section id="kronologi" aria-labelledby="h-kronologi">
+          <div class="sec-head reveal">
+            <span class="sec-num">04 · Kronologi</span>
+            <h2 id="h-kronologi" class="sec-title">Lima hari di laut</h2>
+          </div>
+          <ol class="timeline" role="list">
+            <li class="tl reveal">
+              <span class="tl__when">Hari pertama</span>
+              <h3>Kapal ikan mati</h3>
+              <p>Empat belas orang menerima kunci kamar. Di dapur, seorang juru masak tak melakukan apa-apa selain memotong ikan. Bau amis basi menempel di setiap sudut kapal.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari kedua · pagi</span>
+              <h3>Mata kuning di celah pintu</h3>
+              <p>Lin Qiushi, Ruan Nanzhu, dan Gu Longming melihat sosok humanoid bersisik dengan mata kuning di balik sebuah pintu. Ruan Nanzhu menutup pintunya lagi. Tak lama kemudian, upaya kabur Xiao Mo dengan sekoci berakhir dihantam ikan raksasa. Lin Qiushi menyelamatkannya dengan melempar pelampung.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari kedua · siang</span>
+              <h3>Tujuh dan tujuh</h3>
+              <p>Gu Longming menghitung tujuh lelaki dan tujuh perempuan, persis seperti tumbal dalam mitos. Ruan Nanzhu menunjukkan bahwa hitungan itu keliru karena dirinya laki-laki. Lalu terdengar jeritan: kamar-kamar berpindah. Lin Qiushi langsung paham bahwa kapal ini labirin, dan ruang makan yang tidak ikut bergeser adalah titik awalnya.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Malam kedua</span>
+              <h3>Minotaur makan</h3>
+              <p>Lin Qiushi menyaksikan monster raksasa berkepala ikan mati, dengan insang berdenyut di lehernya, sedang menyantap tubuh manusia yang sudah setengah habis. Korban itu pasangan Jian Qianyuan, salah satu pemain.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Hari ketiga</span>
+              <h3>Tumbal kedua</h3>
+              <p>Jian Qianyuan, yang dulu jijik pada ikan, tiba-tiba melahap ikan busuk sampai kepala-kepalanya bersih. Di kamar monster mereka menemukan rantai yang putus dan sisik-sisik ikan. Monster itu ternyata bisa bergerak ke seluruh labirin. Malamnya Jian Qianyuan ditemukan dengan perut terkoyak dan ikan-ikan yang ia makan berserakan.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari keempat</span>
+              <h3>Monster kedua</h3>
+              <p>Di sebuah kamar terkurung makhluk berkepala ikan raksasa bertubuh manusia yang rapuh. Matanya kuning dan di kepalanya ada tanduk setajam jarum. Lin Qiushi teringat pedang yang membunuh Minotaur. Ruan Nanzhu melempar sekantong ikan mati ke kamar itu sebagai umpan, berharap Minotaur datang mencium baunya.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Malam keempat</span>
+              <h3>Dua monster bertarung</h3>
+              <p>Meski tak makan ikan di ruang makan, seorang pria diseret ke dek atas. Ruan Nanzhu menduga ia makan ikan di dapur. Gu Longming berusaha merawatnya, tetapi ia meninggal beberapa jam kemudian. Mengikuti benang serangga, ketiganya menemukan bekas pertarungan hebat antara kedua monster.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari kelima</span>
+              <h3>Pedang, benang, lalu sang Minotaur</h3>
+              <p>Si mata kuning sekarat lalu mati, dan tanduknya dicabut menjadi pedang panjang. Malam itu Lin Qiushi membawa pedang tanduk dan mengikuti barisan serangga sampai menemukan Minotaur sedang menyantap mayat. Selagi makhluk itu lengah, ia menusuk lehernya, lalu membelah perutnya.</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 05 -->
+        <section id="tokoh" aria-labelledby="h-tokoh">
+          <div class="sec-head reveal">
+            <span class="sec-num">05 · Tokoh</span>
+            <h2 id="h-tokoh" class="sec-title">Para penumpang</h2>
+          </div>
+          <div class="cast">
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Lin Qiushi</h3>
+              <p class="person__alias">Nama di dalam pintu: Yu Linlin</p>
+              <p>Ia membaca kapal sebagai labirin dan memahami mitosnya. Dialah yang memegang pedang dan membunuh Minotaur.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Ruan Nanzhu</h3>
+              <p class="person__alias">Menyamar sebagai “Zhu Meng”</p>
+              <p>Penglihatannya tajam. Ia menyusun rencana umpan ikan. Di akhir pintu, ia sendiri ikut terseret dorongan untuk makan ikan.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain</span>
+              <h3>Gu Longming</h3>
+              <p class="person__alias">Sahabat yang ceroboh tapi setia</p>
+              <p>Ia yang menghitung “tujuh dan tujuh”. Sebelum pintu ini ia suka ikan. Sesudahnya, tidak lagi.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain baru</span>
+              <h3>Xiao Mo</h3>
+              <p class="person__alias">Pintu pertamanya</p>
+              <p>Ia nekat kabur dengan sekoci dan selamat berkat pelampung dari Lin Qiushi. Sebagai balas budi, ia “melaporkan” perselingkuhan Zhu Meng.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">Pemain</span>
+              <h3>Jian Qianyuan</h3>
+              <p class="person__alias">Tumbal kedua</p>
+              <p>Pasangannya dimakan pada malam pertama. Setelah itu ia kecanduan ikan busuk, sampai monster datang menagih “hidangan pembuka”-nya.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain</span>
+              <h3>Shen Juexin</h3>
+              <p class="person__alias">Si mabuk laut</p>
+              <p>Wajahnya kuning pucat. Ia meminta sesendok sambal Lao Gan Ma kepada Ruan Nanzhu, dan kelak termasuk orang yang menganggap ikan busuk itu “tidak apa-apa”.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Entitas</span>
+              <h3>Minotaur</h3>
+              <p class="person__alias">Manusia ikan bermata putih</p>
+              <p>Tingginya sekitar dua meter, berkepala ikan mati, bertubuh kekar bersisik gelap. Ia bisa berkeliaran ke seluruh labirin dan berburu dengan penciuman.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">Entitas</span>
+              <h3>Si Mata Kuning</h3>
+              <p class="person__alias">Tahanan bertanduk</p>
+              <p>Makhluk berkepala ikan raksasa dengan tubuh rapuh, terkurung di dalam kamar. Tanduk di kepalanya adalah “pedang Theseus”.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="kebenaran" aria-labelledby="h-kebenaran">
+          <div class="sec-head reveal">
+            <span class="sec-num">06 · Kebenaran</span>
+            <h2 id="h-kebenaran" class="sec-title">Benang, pedang, hidangan pembuka</h2>
+          </div>
+          <div class="truth reveal" data-truth>
+            <div class="truth__gate">
+              <p>Spoiler: cara memecahkan pintu</p>
+              <button class="btn-solid" type="button" data-truth-btn>Ungkap kebenaran</button>
+            </div>
+            <div class="truth__body prose">
+              <p><strong>Benang.</strong> Benang biasa tak berguna di labirin yang terus berubah. Setelah memangsa manusia, Minotaur meninggalkan jejak darah, dan serangga yang tertarik pada darah berbaris mengikuti jejak itu. Barisan serangga itulah benang Ariadne.</p>
+              <p><strong>Pedang.</strong> Senjata biasa tak mungkin melukai monster setinggi dua meter. Pedangnya adalah tanduk setajam jarum di kepala manusia ikan bermata kuning. Untuk mendapatkannya, makhluk itu harus mati lebih dulu, jadi Ruan Nanzhu memancing Minotaur ke kamarnya dengan umpan ikan.</p>
+              <p><strong>Hidangan pembuka.</strong> Ikan busuk yang dimakan para penumpang terfermentasi di perut mereka, lalu “dicicipi” saat monster menyantapnya. Dalam mitos, hidangan inilah yang membuat Minotaur lengah. Theseus membunuhnya ketika ia sedang makan, dan Lin Qiushi melakukan hal yang sama.</p>
+              <blockquote class="pull">“Belum cukup banyak yang mati. Kita memecahkannya terlalu cepat.”</blockquote>
+              <p>Setelah kunci ditemukan, pintu ini belum mau melepaskan mereka. Hampir semua penumpang yang tersisa tiba-tiba melahap ikan mentah yang pucat seolah itu hidangan paling lezat, dan sisik hijau mulai tumbuh di kulit orang yang pertama kali makan. Ruan Nanzhu, yang sempat mencicipi sesuap, ikut terseret. Menurutnya, pintu itu masih menagih tumbal yang kurang.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section id="keluar" aria-labelledby="h-keluar">
+          <div class="sec-head reveal">
+            <span class="sec-num">07 · Kunci &amp; pintu keluar</span>
+            <h2 id="h-keluar" class="sec-title">Kunci di dalam perut</h2>
+          </div>
+          <div class="exit reveal">
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <circle cx="22" cy="30" r="16" fill="none" stroke="#6f9f86" stroke-width="6"/>
+              <rect x="36" y="27" width="76" height="7" fill="#6f9f86"/>
+              <rect x="92" y="34" width="6" height="12" fill="#6f9f86"/>
+              <rect x="104" y="34" width="6" height="16" fill="#6f9f86"/>
+            </svg>
+            <div class="prose">
+              <p>Lin Qiushi menahan jijik dan merogoh perut Minotaur yang terbelah. Di dalamnya ia menemukan <strong>kunci perunggu kehijauan</strong>. Pintu keluarnya ada di <em>dapur kapal</em>, ruangan penuh ikan mati di talenan, di lantai, dan di dalam tong.</p>
+              <p>Ia menarik Ruan Nanzhu yang masih ingin makan ikan dan membuka pintu besi itu. Tiga orang tewas sebelum kunci ditemukan. Sesudah pintu ini, sebutan “ikan” saja sudah cukup membuat Lin Qiushi dan Ruan Nanzhu mual.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <nav class="arc-nav" aria-label="Pintu lain">
+    <a href="arc-teke-teke.html" data-leave>
+      <span class="arc-nav__dir">← Pintu sebelumnya</span>
+      <span class="arc-nav__name">Arc Teke Teke</span>
+    </a>
+    <a href="arc-patung.html" data-leave>
+      <span class="arc-nav__dir">Pintu berikutnya →</span>
+      <span class="arc-nav__name">Arc Patung</span>
+    </a>
+  </nav>
+
+  <footer class="sources">
+    <p><strong>Sumber:</strong> <em>Kaleidoscope of Death</em> (死亡万花筒) karya Xi Zi Xu, bab 120 “The Thirteenth Door” sampai bab 126 “Getting Off the Ship” (terjemahan Inggris oleh zin’s translations). Ringkasan ditulis ulang dalam bahasa Indonesia.</p>
+    <p class="muted">Kembali ke <a href="index.html" data-leave>lorong Spirealm</a>.</p>
+  </footer>
+
+  <script>
+    (function () {
+      // seven and seven
+      const rows = { m: document.querySelector('[data-row="m"]'), f: document.querySelector('[data-row="f"]') };
+      ["m", "f"].forEach((k, r) => {
+        for (let i = 0; i < 7; i++) {
+          const d = document.createElement("span");
+          d.className = "tribute__fig tribute__fig--" + k;
+          d.style.animationDelay = (r * 0.5 + i * 0.12) + "s";
+          d.innerHTML = '<svg viewBox="0 0 40 84"><use href="#mn-' + (k === "m" ? "man" : "woman") + '"/></svg>';
+          rows[k].appendChild(d);
+        }
+      });
+      // rooms
+      const grid = document.querySelector("[data-rooms]");
+      for (let i = 0; i < 12; i++) {
+        const el = document.createElement("span");
+        el.className = "room" + (i === 5 ? " room--fixed" : "");
+        el.textContent = i === 5 ? "Ruang Makan" : String(100 + Math.floor(Math.random() * 200));
+        grid.appendChild(el);
+      }
+    })();
+
+    window.arcHooks = {
+      rooms() {
+        const rooms = Array.from(document.querySelectorAll(".room:not(.room--fixed)"));
+        const id = setInterval(() => {
+          rooms.forEach((r, i) => {
+            setTimeout(() => {
+              r.classList.add("is-mist");
+              setTimeout(() => {
+                r.textContent = String(101 + Math.floor(Math.random() * 230));
+                r.classList.remove("is-mist");
+              }, 300);
+            }, i * 40);
+          });
+          window.SpiAudio && window.SpiAudio.play("thud");
+        }, 1100);
+        return () => clearInterval(id);
+      }
+    };
+  </script>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/arc.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Arc Hako Onna — lacquered wood, lantern amber, a girl folded into a box */
+
+.arc--hako {
+  --accent: #c0392b;
+  --accent-soft: rgba(192, 57, 43, 0.15);
+  --tint: #0d0907;
+  --cold: #e0b77a;
+  --f-arc: "Dela Gothic One", "Shippori Mincho B1", sans-serif;
+  --arc-weight: 400;
+  --arc-track: 0.01em;
+  background:
+    radial-gradient(ellipse 60% 40% at 30% 0%, rgba(224, 160, 90, 0.1), transparent 70%),
+    var(--tint);
+}
+
+.chest {
+  position: relative;
+  aspect-ratio: 1.35;
+  background:
+    linear-gradient(180deg, rgba(255, 220, 170, 0.08), transparent 30%),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0 2px, transparent 2px 11px),
+    linear-gradient(180deg, #5a3820, #2e1b0e);
+  border: 2px solid #1a0f08;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.35), 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+.chest::before {
+  /* lid seam */
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 30%;
+  height: 2px;
+  background: #140a05;
+}
+.chest::after {
+  /* latch */
+  content: "";
+  position: absolute;
+  left: 50%; top: 24%;
+  width: 12%; height: 16%;
+  transform: translateX(-50%);
+  background: linear-gradient(#c79b55, #6b4a1e);
+  border-radius: 2px;
+}
+
+/* ---------- Scene 1: chest grid ---------- */
+.chests {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(6px, 1.4vw, 12px);
+  width: min(90vw, 620px);
+}
+.chests .chest { opacity: 0; transform: translateY(10px); }
+.scene.is-active .chests .chest { animation: chestin 0.5s var(--ease-out) forwards; animation-delay: calc(var(--i) * 0.06s); }
+@keyframes chestin { to { opacity: 1; transform: none; } }
+
+/* ---------- Scene 2: crying chest ---------- */
+.solo { position: relative; width: min(60vw, 280px); }
+.scene.is-active .solo .chest { animation: tremble 0.14s linear 0.8s 14; }
+@keyframes tremble {
+  25% { transform: translate(1px, -1px) rotate(0.4deg); }
+  75% { transform: translate(-1px, 1px) rotate(-0.4deg); }
+}
+.sob {
+  position: absolute;
+  left: 50%;
+  top: -38%;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--f-arc);
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  color: var(--cold);
+  opacity: 0;
+}
+.scene.is-active .sob { animation: sob 1.6s ease-in-out 0.6s infinite; }
+@keyframes sob { 0%, 100% { opacity: 0; transform: translate(-50%, 6px); } 40% { opacity: 0.9; transform: translate(-50%, 0); } }
+
+/* ---------- Scene 3: noise discs ---------- */
+.discs { position: relative; width: 160px; height: 220px; }
+.discs__peg { position: absolute; left: 50%; bottom: 0; width: 8px; height: 30px; margin-left: -4px; background: #6b4a1e; }
+.disc {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  height: 22px;
+  margin-left: -60px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 35%, #e9cf9a, #8a5f28 70%);
+  box-shadow: 0 3px 0 #4a3010;
+  opacity: 0;
+}
+.disc:nth-child(2) { bottom: 22px; } .disc:nth-child(3) { bottom: 44px; } .disc:nth-child(4) { bottom: 66px; } .disc:nth-child(5) { bottom: 88px; } .disc:nth-child(6) { bottom: 110px; }
+.scene.is-active .disc { animation: stack 0.35s ease-out forwards; }
+.scene.is-active .disc:nth-child(3) { animation-delay: 0.35s; }
+.scene.is-active .disc:nth-child(4) { animation-delay: 0.7s; }
+.scene.is-active .disc:nth-child(5) { animation-delay: 1.05s; }
+.scene.is-active .disc:nth-child(6) { animation: stack 0.35s ease-out 1.4s forwards, topple 0.8s cubic-bezier(0.5, 0, 0.7, 0.4) 2.2s forwards; }
+@keyframes stack { from { opacity: 0; transform: translateY(-60px); } to { opacity: 1; transform: none; } }
+@keyframes topple { to { transform: translate(140px, 120px) rotate(70deg); opacity: 0.4; } }
+.scene.is-active .disc:nth-child(5) { animation: stack 0.35s ease-out 1.05s forwards, wobble 0.5s ease-in-out 2.1s 2; }
+@keyframes wobble { 50% { transform: translateX(6px) rotate(3deg); } }
+
+/* ---------- Scene 4: grab ---------- */
+.grab { position: relative; width: min(64vw, 300px); }
+.grab .lid {
+  position: absolute;
+  left: -2px; right: -2px; top: -2px;
+  height: 32%;
+  background: linear-gradient(180deg, #6a4426, #3b2414);
+  border: 2px solid #1a0f08;
+  transform-origin: 50% 0;
+  z-index: 3;
+}
+.scene.is-active .grab .lid { animation: lidup 0.6s cubic-bezier(0.3, 1.4, 0.5, 1) 0.9s forwards; }
+@keyframes lidup { to { transform: translateY(-60%) rotateX(70deg); } }
+.grab .hand { position: absolute; left: 30%; width: 40%; bottom: 60%; z-index: 2; opacity: 0; }
+.scene.is-active .grab .hand { animation: handout 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 1.3s forwards; }
+@keyframes handout { from { opacity: 0; transform: translateY(60%); } to { opacity: 1; transform: translateY(-10%); } }
+
+/* ---------- Scene 5 ---------- */
+.scene--behind { background: radial-gradient(ellipse at 50% 50%, #1a0805, #000 70%); }
+.behind {
+  margin: 0;
+  padding: 0 var(--gutter);
+  text-align: center;
+  font-family: var(--f-arc);
+  font-size: clamp(2rem, 1rem + 5vw, 5rem);
+  line-height: 1.1;
+  color: #f2e2cf;
+}
+.behind small { display: block; margin-top: 16px; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.3em; color: var(--ink-faint); }
+.scene.is-active .behind { animation: creep 2.6s ease-in forwards; }
+@keyframes creep { from { transform: scale(0.94); letter-spacing: 0.2em; opacity: 0.2; } to { transform: scale(1.04); letter-spacing: 0; opacity: 1; } }
+
+/* hero */
+.hako-hero-art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 14px;
+  padding: 10vh 4vw;
+  align-content: center;
+  opacity: 0.32;
+  transform: perspective(900px) rotateX(18deg) scale(1.1);
+}
+@media (max-width: 640px) { .hako-hero-art { grid-template-columns: repeat(5, 1fr); } }

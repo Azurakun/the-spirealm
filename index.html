@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Spirealm — Lorong Dua Belas Pintu</title>
+  <meta name="description" content="The Spirealm: jelajahi pintu-pintu dari novel Kaleidoscope of Death (死亡万花筒). Buka pintu, saksikan legendanya, pahami kisahnya.">
+  <meta name="theme-color" content="#07060a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect x='1' y='1' width='18' height='26' fill='%235a3a22' stroke='%23d01b22'/%3E%3Ccircle cx='15' cy='15' r='1.5' fill='%23e9e2d6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Special+Elite&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body class="atmos hub">
+  <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
+
+  <!-- Content warning -->
+  <div class="cw" data-cw hidden role="dialog" aria-modal="true" aria-labelledby="cw-title">
+    <div class="cw__card">
+      <p class="eyebrow">Peringatan Konten</p>
+      <h2 id="cw-title">Sebelum kau melangkah masuk</h2>
+      <p>Situs ini merangkum kisah horor dari novel <em>Kaleidoscope of Death</em>. Di dalamnya ada kematian yang digambarkan secara grafis, perundungan, kecelakaan, bunuh diri, dan kanibalisme.</p>
+      <p>Setiap pintu berisi <strong>spoiler penuh</strong> sampai ke akhir kisahnya. Animasi dapat menampilkan kilatan cepat. Suara mati secara bawaan.</p>
+      <div class="cw__actions">
+        <button class="btn-solid" type="button" data-cw-accept>Aku mengerti, masuk</button>
+        <button class="btn-ghost" type="button" data-cw-leave>Tidak, kembali</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" aria-label="The Spirealm, beranda">
+      <svg viewBox="0 0 14 20" aria-hidden="true"><rect x="0.5" y="0.5" width="13" height="19" fill="none" stroke="currentColor"/><circle cx="10.5" cy="10.5" r="1" fill="#d01b22"/></svg>
+      SPIREALM
+    </a>
+    <div class="topbar__actions">
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hub-hero" aria-labelledby="hub-title">
+      <p class="eyebrow reveal">Kaleidoscope of Death <span class="dot">◆</span> 死亡万花筒</p>
+      <h1 id="hub-title" class="hub-title reveal">
+        <span class="hub-title__the">The</span>
+        <span class="hub-title__main" data-flicker>Spirealm</span>
+      </h1>
+      <p class="lead hub-hero__lead reveal">Di ujung lorong yang tak berujung berdiri dua belas pintu besi. Di balik setiap pintu, sebuah legenda hidup kembali dan menunggu seseorang untuk dimangsa.</p>
+      <p class="hub-hero__instr reveal"><span aria-hidden="true">↓</span> Pilih sebuah pintu. Jangan menoleh ke belakang.</p>
+    </section>
+
+    <!-- Corridor of doors -->
+    <section class="corridor" aria-labelledby="corridor-title">
+      <h2 id="corridor-title" class="sr-only">Pintu-pintu Spirealm</h2>
+      <div class="corridor__floor" aria-hidden="true"></div>
+
+      <ul class="doors" role="list">
+        <!-- Door: Teke Teke -->
+        <li class="doors__item reveal">
+          <a class="door" href="arc-teke-teke.html" data-door data-arc="teke" style="--glow:#d01b22">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">V</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Teke Teke</span>
+            <span class="door__meta">Pintu V <span class="dot">·</span> Satchan</span>
+          </a>
+        </li>
+
+        <!-- Door: Minator -->
+        <li class="doors__item reveal">
+          <a class="door" href="arc-minator.html" data-door data-arc="minator" style="--glow:#d9b04a">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XIII</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Minator</span>
+            <span class="door__meta">Pintu XIII <span class="dot">·</span> Minotaur</span>
+          </a>
+        </li>
+
+        <!-- Door: Patung -->
+        <li class="doors__item reveal">
+          <a class="door" href="arc-patung.html" data-door data-arc="patung" style="--glow:#efe8dc">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XI</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Patung</span>
+            <span class="door__meta">Pintu XI <span class="dot">·</span> Pahatan</span>
+          </a>
+        </li>
+
+        <!-- Second row -->
+        <li class="doors__item reveal">
+          <a class="door" href="arc-slenderman.html" data-door data-arc="slender" style="--glow:#c9d1cc">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">VI</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Slenderman</span>
+            <span class="door__meta">Pintu VI <span class="dot">·</span> Topi tinggi</span>
+          </a>
+        </li>
+        <li class="doors__item reveal">
+          <a class="door" href="arc-teru-teru-bozu.html" data-door data-arc="teru" style="--glow:#7d9ccc">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">X</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Teru Teru Bōzu</span>
+            <span class="door__meta">Pintu X <span class="dot">·</span> Hujan</span>
+          </a>
+        </li>
+        <li class="doors__item reveal">
+          <a class="door" href="arc-hako-onna.html" data-door data-arc="hako" style="--glow:#e0a05a">
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XII</span>
+              </span>
+            </span>
+            <span class="door__plate">Arc Hako Onna</span>
+            <span class="door__meta">Pintu XII <span class="dot">·</span> Seratus peti</span>
+          </a>
+        </li>
+      </ul>
+      <p class="toast" data-toast role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Rules of the corridor -->
+    <section class="rules" aria-labelledby="rules-title">
+      <div class="rules__head reveal">
+        <p class="eyebrow">Sebelum membuka pintu</p>
+        <h2 id="rules-title" class="rules__title">Hukum Dunia Pintu</h2>
+        <p class="muted rules__intro">Siapa pun yang terseret ke Spirealm mengikuti aturan yang sama. Dalam novel, Lin Qiushi memahaminya setelah terbangun di sebuah lorong dengan dua belas pintu besi yang identik.</p>
+      </div>
+      <ol class="rules__list" role="list">
+        <li class="rule reveal">
+          <span class="rule__num">01</span>
+          <h3 class="rule__title">Secarik Petunjuk</h3>
+          <p>Setiap pintu memiliki satu petunjuk: sebuah kata, nama, atau kalimat pendek. Petunjuk itu sering menjadi satu-satunya bocoran tentang <em>syarat kematian</em> di dalamnya.</p>
+        </li>
+        <li class="rule reveal">
+          <span class="rule__num">02</span>
+          <h3 class="rule__title">Syarat Kematian</h3>
+          <p>Hantu dan monster tidak membunuh secara acak. Ada aturan yang memicu kematian. Siapa yang melanggarnya akan mati, sering kali dengan cara yang sesuai dengan legendanya.</p>
+        </li>
+        <li class="rule reveal">
+          <span class="rule__num">03</span>
+          <h3 class="rule__title">Kunci</h3>
+          <p>Jalan keluar hanya terbuka dengan sebuah kunci perunggu. Kunci itu biasanya tersembunyi di inti misteri, dan hanya ditemukan setelah kebenarannya terungkap.</p>
+        </li>
+        <li class="rule reveal">
+          <span class="rule__num">04</span>
+          <h3 class="rule__title">Pintu Besi</h3>
+          <p>Di suatu tempat di dunia itu, sebuah pintu biasa berubah menjadi pintu besi. Kunci di tangan, pintu ditemukan: barulah ada lorong putih menuju pulang.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>Disusun dari novel <em>Kaleidoscope of Death</em> (死亡万花筒) karya Xi Zi Xu (西子绪), yang diadaptasi menjadi drama <em>The Spirealm</em> (2024). Ringkasan ditulis ulang dalam bahasa Indonesia untuk keperluan apresiasi penggemar.</p>
+    <p class="muted">Nomor pintu mengikuti hitungan Lin Qiushi di dalam novel.</p>
+  </footer>
+
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>

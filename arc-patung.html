@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Patung — Pintu XI · The Spirealm</title>
+  <meta name="description" content="Arc Patung: pintu kesebelas Lin Qiushi dalam Kaleidoscope of Death. Sebuah kampus seni, patung yang mengabulkan permohonan, dan harga yang harus dibayar setimpal.">
+  <meta name="theme-color" content="#0e0d0c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect x='1' y='1' width='18' height='26' fill='%235a3a22' stroke='%23efe8dc'/%3E%3Ccircle cx='15' cy='15' r='1.5' fill='%23b3261e'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IM+Fell+English+SC&family=Special+Elite&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/arc.css">
+  <link rel="stylesheet" href="assets/css/arc-patung.css">
+  <style>
+    .pt-hero-art { position: absolute; inset: 0; background: radial-gradient(ellipse 40% 60% at 72% 30%, rgba(245, 238, 225, 0.12), transparent 70%); }
+    .pt-hero-art [data-bust] { position: absolute; right: 4%; bottom: -6%; width: min(46vw, 560px); opacity: 0.55; }
+    .pt-hero-art [data-bust] svg { width: 100%; height: auto; }
+    @media (max-width: 640px) { .pt-hero-art [data-bust] { width: 80vw; right: -14vw; opacity: 0.3; } }
+  </style>
+</head>
+<body class="atmos arc arc--patung is-locked" data-drone="62">
+  <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
+  <div class="read-progress" data-read-progress aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="pt-plaster" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f3eee5"/>
+        <stop offset="0.55" stop-color="#d6cfc3"/>
+        <stop offset="1" stop-color="#8f877a"/>
+      </linearGradient>
+      <radialGradient id="pt-face" cx="0.42" cy="0.38" r="0.7">
+        <stop offset="0" stop-color="#f7f3ec"/>
+        <stop offset="0.7" stop-color="#ddd6ca"/>
+        <stop offset="1" stop-color="#a59d90"/>
+      </radialGradient>
+      <linearGradient id="pt-hair" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#cfc7ba"/>
+        <stop offset="1" stop-color="#8a8276"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <template id="bust-tpl">
+    <svg viewBox="0 0 400 500" aria-hidden="true">
+      <path d="M200 70 C128 70 104 130 108 190 C112 260 96 330 84 392 L146 372 C150 320 150 280 146 250 L254 250 C250 280 250 320 254 372 L316 392 C304 330 288 260 292 190 C296 130 272 70 200 70 Z" fill="url(#pt-hair)"/>
+      <path d="M50 500 C60 380 120 320 200 316 C280 320 340 380 350 500 Z" fill="url(#pt-plaster)"/>
+      <path d="M174 250 L226 250 L232 318 L168 318 Z" fill="#b9b1a4"/>
+      <ellipse cx="200" cy="180" rx="64" ry="84" fill="url(#pt-face)"/>
+      <path d="M136 150 C150 100 190 88 230 96 C260 104 268 130 266 160 C250 120 210 110 180 120 C160 128 146 140 136 150 Z" fill="#c9c1b4"/>
+      <g fill="none" stroke="#8f877a" stroke-width="2.4" stroke-linecap="round">
+        <path d="M160 160 Q176 152 190 158"/>
+        <path d="M210 158 Q224 152 240 160"/>
+        <path d="M200 182 Q196 200 192 206 Q200 210 207 206"/>
+      </g>
+      <g class="eyes-closed" fill="none" stroke="#8f877a" stroke-width="2.4" stroke-linecap="round">
+        <path d="M166 176 Q178 184 190 176"/>
+        <path d="M210 176 Q222 184 234 176"/>
+      </g>
+      <g class="eyes-open">
+        <ellipse cx="178" cy="176" rx="12" ry="6.5" fill="#f6f1e8" stroke="#8f877a" stroke-width="1.5"/>
+        <ellipse cx="222" cy="176" rx="12" ry="6.5" fill="#f6f1e8" stroke="#8f877a" stroke-width="1.5"/>
+        <circle cx="178" cy="176" r="4.2" fill="#140f0c"/>
+        <circle cx="222" cy="176" r="4.2" fill="#140f0c"/>
+      </g>
+      <path class="smile" d="M182 222 Q200 234 218 222" fill="none" stroke="#8f877a" stroke-width="2.6" stroke-linecap="round"/>
+      <path class="tear" d="M178 184 C178 202 173 222 176 250" fill="none" stroke="#7a1610" stroke-width="3.4" stroke-linecap="round"/>
+      <g>
+        <path class="crack" d="M200 96 L206 130 L196 150 L212 186 L204 214 L214 246"/>
+        <path class="crack" d="M140 330 L176 360 L168 400 L196 430 L188 470"/>
+        <path class="crack" d="M262 120 L240 150 L250 176 L236 198"/>
+        <path class="crack" d="M300 380 L270 410 L284 450 L262 496"/>
+        <path class="crack" d="M118 200 L146 214 L138 240 L152 262"/>
+      </g>
+    </svg>
+  </template>
+
+  <!-- ================= CINEMATIC ================= -->
+  <div class="cine" data-cine role="region" aria-label="Adegan pembuka Arc Patung">
+    <div class="cine__top">
+      <span class="eyebrow">Pintu XI <span class="dot">◆</span> Pahatan</span>
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+
+    <div class="cine__stage">
+      <!-- 1 -->
+      <div class="scene scene--gallery" data-scene="gallery" data-dur="3800">
+        <div class="scene__art">
+          <div class="gallery" data-gallery aria-hidden="true"></div>
+        </div>
+        <p class="scene__caption"><span data-type>Jurusan seni patung. Delapan mahasiswa tewas dalam setengah tahun.</span><small>Pintu kesebelas Lin Qiushi</small></p>
+      </div>
+
+      <!-- 2 -->
+      <div class="scene" data-scene="doll" data-dur="3600" data-sfx="thud@2100">
+        <div class="scene__art">
+          <div class="doll-wrap" aria-hidden="true">
+            <span class="drop"></span>
+            <svg viewBox="0 0 100 220">
+              <rect x="26" y="64" width="48" height="140" rx="18" fill="#7f5228"/>
+              <g stroke="#5b3818" stroke-width="1.2" fill="none" opacity="0.7">
+                <path d="M34 80 C40 120 36 160 40 196"/><path d="M58 76 C64 120 60 170 66 200"/>
+              </g>
+              <circle cx="50" cy="40" r="27" fill="#a8743f"/>
+              <path d="M38 40 Q42 43 46 40 M54 40 Q58 43 62 40" stroke="#3c240f" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M46 54 L54 54" stroke="#3c240f" stroke-width="2" stroke-linecap="round"/>
+              <ellipse class="doll-stain" cx="50" cy="20" rx="15" ry="7" fill="#7d120e"/>
+              <path class="doll-stain" d="M44 22 C44 34 46 44 45 56" stroke="#7d120e" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <p class="scene__caption"><span data-type>Teteskan darah ke boneka kayu. Ucapkan permohonanmu.</span></p>
+      </div>
+
+      <!-- 3 -->
+      <div class="scene" data-scene="unveil" data-dur="4000">
+        <div class="scene__art">
+          <div class="unveil" aria-hidden="true">
+            <div data-bust></div>
+            <svg class="cloth" viewBox="0 0 400 500" style="position:absolute;inset:0;width:100%;height:100%">
+              <path d="M30 40 C120 -10 280 -10 370 40 L400 500 L0 500 Z" fill="#ebe5da"/>
+              <g stroke="#bdb5a8" stroke-width="2" fill="none" opacity="0.8">
+                <path d="M110 30 C120 200 90 340 70 500"/>
+                <path d="M200 0 C210 160 190 320 210 500"/>
+                <path d="M290 30 C280 200 310 340 330 500"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <p class="scene__caption"><span data-type>Dulu, patung itu hanya sebuah kepala.</span></p>
+      </div>
+
+      <!-- 4 -->
+      <div class="scene scene--alive" data-scene="alive" data-dur="3900" data-sfx="heart@300,heart@1500,heart@2700">
+        <div class="scene__art">
+          <div class="alive" aria-hidden="true">
+            <div data-bust></div>
+            <p class="heartbeat">dug… dug…</p>
+          </div>
+        </div>
+        <p class="scene__caption"><span data-type>Kini kulitnya hangat. Dan jantungnya berdetak.</span></p>
+      </div>
+
+      <!-- 5 -->
+      <div class="scene scene--shatter" data-scene="shatter" data-dur="4200" data-sfx="crack@200,crack@2200" data-flash="2200">
+        <div class="scene__art">
+          <div class="shatter" aria-hidden="true"><div data-bust></div></div>
+        </div>
+        <p class="verdict">Mata ganti mata.<br>Gigi ganti gigi.<small>Petunjuk pintu kesebelas</small></p>
+      </div>
+    </div>
+
+    <div class="cine__flash" data-flash aria-hidden="true"></div>
+    <div class="cine__ui">
+      <span class="cine__label">Tekan Esc untuk melewati</span>
+      <button class="btn-ghost" type="button" data-skip>Lewati adegan <span aria-hidden="true">›</span></button>
+    </div>
+    <div class="cine__progress" aria-hidden="true"><span data-cine-progress></span></div>
+  </div>
+
+  <!-- ================= PAGE ================= -->
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" data-leave aria-label="Kembali ke lorong pintu">
+      <svg viewBox="0 0 14 20" aria-hidden="true"><rect x="0.5" y="0.5" width="13" height="19" fill="none" stroke="currentColor"/><circle cx="10.5" cy="10.5" r="1" fill="currentColor"/></svg>
+      ← Lorong
+    </a>
+    <div class="topbar__actions">
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="arc-hero" aria-labelledby="arc-title">
+      <div class="arc-hero__bg" aria-hidden="true">
+        <div class="pt-hero-art"><div data-bust></div></div>
+      </div>
+      <div class="arc-hero__inner">
+        <p class="eyebrow">Pintu XI <span class="dot">◆</span> Bab 97–105 <span class="dot">◆</span> Kaleidoscope of Death</p>
+        <h1 id="arc-title" class="arc-title" data-arc-title>
+          <span class="arc-title__pre">Arc</span>
+          Patung
+        </h1>
+        <p class="arc-sub">“Mata ganti mata, gigi ganti gigi.”</p>
+        <p class="lead arc-hero__lead">Di gudang klub seni patung ada sebuah patung perempuan yang dulu hanya berupa kepala. Setiap permohonan yang diucapkan kepadanya membuat tubuhnya bertambah, dan seseorang membayarnya dengan nyawa.</p>
+        <div class="arc-hero__actions">
+          <a class="btn-solid" href="#ringkasan">Baca kisahnya</a>
+          <button class="btn-ghost" type="button" data-replay>↺ Putar ulang adegan</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="arc-body">
+      <nav class="toc" aria-label="Daftar isi">
+        <p class="eyebrow toc__label">Isi berkas</p>
+        <ol>
+          <li><a href="#ringkasan">Ringkasan</a></li>
+          <li><a href="#legenda">Legenda di balik pintu</a></li>
+          <li><a href="#aturan">Syarat kematian</a></li>
+          <li><a href="#kronologi">Kronologi</a></li>
+          <li><a href="#tokoh">Tokoh</a></li>
+          <li><a href="#kebenaran">Kebenaran</a></li>
+          <li><a href="#keluar">Kunci &amp; pintu keluar</a></li>
+        </ol>
+      </nav>
+
+      <article class="story">
+        <!-- 01 -->
+        <section id="ringkasan" aria-labelledby="h-ringkasan">
+          <div class="sec-head reveal">
+            <span class="sec-num">01 · Ringkasan</span>
+            <h2 id="h-ringkasan" class="sec-title">Kampus yang mengoleksi kematian</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Pintu ini adalah pintu kelima <strong>Gu Longming</strong>. Lin Qiushi, yang sudah menjadi veteran, menemaninya tanpa Ruan Nanzhu. Menurut perhitungan, pintu kelima belum terlalu berat karena tingkat kesulitan baru melonjak di pintu keenam. Namun petunjuknya hanya sebuah pepatah, dan pepatah seperti itu justru termasuk petunjuk yang paling sulit dibaca.</p>
+            <p>Mereka tiba di sebuah kampus seni sebagai penyelidik yang disewa pihak kampus untuk mengusut rentetan kematian. Dalam setengah tahun, delapan mahasiswa tingkat tiga <strong>jurusan seni patung</strong> tewas. Kematian itu bermula dari Kelas Tiga, yang kehilangan tiga orang dalam seminggu, lalu menyebar ke kelas-kelas lain.</p>
+          </div>
+          <dl class="facts reveal" style="margin-top:28px">
+            <div><dt>Latar</dt><dd>Kampus seni, jurusan seni patung</dd></div>
+            <div><dt>Peran pemain</dt><dd>Penyelidik kematian di kampus</dd></div>
+            <div><dt>Pemain kunci</dt><dd>Lin Qiushi, Gu Longming, Zuo Sisi</dd></div>
+            <div><dt>Entitas</dt><dd>Patung pengabul permohonan &amp; arwah Zhu Ruyuan</dd></div>
+            <div><dt>Korban sebelumnya</dt><dd>8 mahasiswa tingkat tiga</dd></div>
+            <div><dt>Kunci</dt><dd>Di dalam patung yang hancur</dd></div>
+          </dl>
+          <div class="hint reveal">
+            <span class="hint__label">Petunjuk pintu</span>
+            <p class="hint__text">“Mata ganti mata, gigi ganti gigi.”</p>
+            <p class="hint__note">Kutipan Alkitab tentang pembalasan setimpal. Apa yang kau rusak dari orang lain harus kau bayar dengan harga yang sama.</p>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="legenda" aria-labelledby="h-legenda">
+          <div class="sec-head reveal">
+            <span class="sec-num">02 · Legenda di balik pintu</span>
+            <h2 id="h-legenda" class="sec-title">Permainan legenda sekolah</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Setiap sekolah punya cerita seram. Konon jika kau berdiri di bawah patung kepala sekolah pukul tiga pagi, waktu akan berhenti. Konon tangga dekat ruang seni bertambah menjadi tiga belas anak tangga saat tengah malam. Para anggota klub seni patung sedang bosan. Mereka sempat bermain jelangkung pena (<em>pen immortal</em>), tetapi tak terjadi apa-apa.</p>
+            <p>Lalu seorang kakak tingkat, <strong>Zhu Ruyuan</strong>, menawarkan permainan yang “lebih menarik”. Setiap orang mendapat sebuah boneka kayu kecil, meneteskan darahnya ke boneka itu, lalu mengucapkan permohonan di hadapan sebuah patung di gudang ruang klub.</p>
+          </div>
+          <div class="versus reveal">
+            <div>
+              <h3>Prinsip lama</h3>
+              <p><em>Lex talionis</em>, hukum pembalasan setimpal: mata dibayar mata, gigi dibayar gigi. Hukumannya harus seimbang dengan kesalahannya.</p>
+            </div>
+            <div>
+              <h3>Versi di dalam pintu</h3>
+              <p>Patung itu memang mengabulkan permohonan, tetapi setiap permohonan ada harganya. Teman-teman yang ikut ritual mati satu per satu, dan setiap kematian menjadi cicilan untuk sebuah keinginan yang jauh lebih mahal.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section id="aturan" aria-labelledby="h-aturan">
+          <div class="sec-head reveal">
+            <span class="sec-num">03 · Syarat kematian</span>
+            <h2 id="h-aturan" class="sec-title">Harga sebuah permohonan</h2>
+          </div>
+          <ol class="deathrules" role="list">
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">i</span>
+              <div>
+                <h3>Ikut dalam ritual boneka kayu</h3>
+                <p>Semua korban adalah anggota klub seni patung yang ikut ritual. Pada mayat-mayat itu ditemukan boneka kayu bernoda darah, dan kepala bonekanya sudah hilang.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">ii</span>
+              <div>
+                <h3>Mati menjadi patung</h3>
+                <p>Kepala korban pertama dipelintir lalu dipasang di tubuh patung. Korban kedua kehilangan kedua matanya. Dua pemain yang mati di dalam pintu ditemukan dengan kepala diganti dada plester dan tubuh yang mengeras seperti semen.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">iii</span>
+              <div>
+                <h3>Hitung mundur “kecelakaan”</h3>
+                <p>Kaca jendela pecah tiba-tiba. Lampu gantung perpustakaan jatuh tepat di tempat mereka berdiri. Kecelakaan yang terlalu sering bukan lagi kecelakaan, melainkan tanda bahwa giliran seseorang hampir tiba.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">iv</span>
+              <div>
+                <h3>Pintu kelas yang membelah</h3>
+                <p>Xiao He, salah satu anggota klub, terjepit pintu kelas yang membanting dan tubuhnya terbelah dua. Di dunia pintu, logika fisika tidak berlaku. Pintu besi yang tumpul pun bisa menjadi pisau.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 04 -->
+        <section id="kronologi" aria-labelledby="h-kronologi">
+          <div class="sec-head reveal">
+            <span class="sec-num">04 · Kronologi</span>
+            <h2 id="h-kronologi" class="sec-title">Dari ruang kelas sampai gudang klub</h2>
+          </div>
+          <ol class="timeline" role="list">
+            <li class="tl reveal">
+              <span class="tl__when">Pagi pertama</span>
+              <h3>Kampus yang terlalu sepi</h3>
+              <p>Jalanan kosong setelah pukul delapan pagi, lalu mahasiswa muncul seakan dari udara kosong. Zuo Sisi, seorang pemain veteran, mendesak seorang mahasiswa Kelas Tiga. Korban pertama bernama Liu Xiaoyu dan mati di kelas tempat patung-patung batu disimpan. Mahasiswa itu bilang tidak tahu caranya, tetapi tangannya gelisah mencubit celananya sendiri.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Berkas kasus</span>
+              <h3>Delapan nama</h3>
+              <p>Tiga laki-laki dan lima perempuan, semuanya tingkat tiga jurusan seni patung. Tiga korban pertama mati di ruang patung: satu kepalanya dipasang di tubuh patung, satu matanya dicungkil, dan satu mati ketakutan.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Ruang kelas</span>
+              <h3>Tiga mahasiswa dan boneka kayu</h3>
+              <p>Lin Qiushi dan Gu Longming memergoki tiga mahasiswa mengoleskan darah ke boneka kayu. Satu kabur. Satu lagi, <strong>Xiao He</strong>, menatap ke langit-langit sambil bersenandung aneh, lalu terjepit pintu besi kelas sampai terbelah dua. Yang tersisa memperkenalkan diri sebagai <strong>Ai Wenrui</strong>.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Ruang aktivitas klub</span>
+              <h3>Patung yang tumbuh</h3>
+              <p>Di gudang klub ada patung perempuan berselubung kain putih. Wajahnya menunduk dengan senyum tipis dan ia duduk mengenakan gaun panjang. Ai Wenrui pucat pasi: “Dulu patung ini hanya kepala!” Begitu pintu gudang dikunci, senyum patung itu memudar dan mata plesternya berkedip.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Siang</span>
+              <h3>Kakak tingkat yang tidak ada</h3>
+              <p>Tak satu pun mahasiswa mengenal Zhu Ruyuan. Seorang dosen akhirnya menjelaskan bahwa Zhu Ruyuan sudah meninggal lima tahun lalu.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Pagi berikutnya</span>
+              <h3>Kepala plester</h3>
+              <p>Dua pemain ditemukan tewas berdiri di tengah kamar yang bersimbah darah. Kepala mereka diganti dada plester dan tubuh mereka kaku seperti semen. Di saku masing-masing ada boneka kayu tanpa kepala.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Perpustakaan</span>
+              <h3>Mantan wali kelas</h3>
+              <p>Pustakawan kampus dulunya wali kelas Zhu Ruyuan. Ia menggambarkan Zhu Ruyuan sebagai pencipta yang keras yang menghancurkan setiap karya cacat. Patung perempuan yang dimodelkan dari dirinya sendiri “hanya cantik, tapi kurang sesuatu”, dan Zhu Ruyuan bunuh diri. Saat Gu Longming merampas boneka kayu dari saku pustakawan itu, boneka tersebut patah dan pustakawan berlari histeris. Sesudahnya lampu gantung jatuh.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Kamar 307</span>
+              <h3>Nama di dalam ponsel</h3>
+              <p>Ai Wenrui mengaku bahwa Zhou Hanshan, satu-satunya penyintas di foto klub, sudah setengah tahun berpacaran dengan Zhu Ruyuan. Di kamar Zhou Hanshan mereka hanya menemukan sebuah kepala terpenggal. Lin Qiushi lalu memeriksa ponsel Ai Wenrui, dan isinya membongkar penyamaran besar.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Malam terakhir</span>
+              <h3>Permohonan Lin Qiushi</h3>
+              <p>Patung itu kini hangat seperti kulit manusia, dan jantungnya berdetak. Lin Qiushi meneteskan darah ke boneka kayu dan mengucapkan permohonannya sendiri di depan patung.</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 05 -->
+        <section id="tokoh" aria-labelledby="h-tokoh">
+          <div class="sec-head reveal">
+            <span class="sec-num">05 · Tokoh</span>
+            <h2 id="h-tokoh" class="sec-title">Pemahat dan pahatannya</h2>
+          </div>
+          <div class="cast">
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Lin Qiushi</h3>
+              <p class="person__alias">Pintu kesebelasnya</p>
+              <p>Masuk sebagai pendamping. Ia membaca kebohongan dari detail kecil dan memecahkan pintu dengan satu kalimat permohonan.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain</span>
+              <h3>Gu Longming</h3>
+              <p class="person__alias">Pintu kelimanya</p>
+              <p>Berhati lunak dan sempat bersimpati pada “Ai Wenrui”. Ia ikut terguncang ketika tahu siapa orang itu sebenarnya.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain</span>
+              <h3>Zuo Sisi</h3>
+              <p class="person__alias">Veteran yang dingin</p>
+              <p>Ia bisa menatap mayat tanpa berkedip. Penyelidikannya berjalan sendiri, dan Lin Qiushi memberinya isyarat ketika kunci sudah ditemukan.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">NPC</span>
+              <h3>“Ai Wenrui”</h3>
+              <p class="person__alias">Anggota klub seni patung</p>
+              <p>NPC yang terlalu hidup. Ia ketakutan, menangis, dan meminta tolong. Dialah yang menuntun mereka memahami seluruh kasus.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Arwah</span>
+              <h3>Zhu Ruyuan</h3>
+              <p class="person__alias">Mahasiswi patung, wafat 5 tahun lalu</p>
+              <p>Pemahat perfeksionis yang tak tahan pada cacat. Ia muncul basah, dan air yang menetes darinya berubah menjadi darah.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">NPC</span>
+              <h3>Sang pustakawan</h3>
+              <p class="person__alias">Mantan wali kelas Zhu Ruyuan</p>
+              <p>Ia menganggap patung-patung di lobi perpustakaan “sempurna”, dan diam-diam juga menyimpan boneka kayu.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">NPC</span>
+              <h3>Xiao He</h3>
+              <p class="person__alias">Anggota klub</p>
+              <p>Ia terbelah oleh pintu kelas di depan mata Lin Qiushi.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="kebenaran" aria-labelledby="h-kebenaran">
+          <div class="sec-head reveal">
+            <span class="sec-num">06 · Kebenaran</span>
+            <h2 id="h-kebenaran" class="sec-title">Yang menangis bukan patungnya</h2>
+          </div>
+          <div class="truth reveal" data-truth>
+            <div class="truth__gate">
+              <p>Spoiler: identitas dan permohonan</p>
+              <button class="btn-solid" type="button" data-truth-btn>Ungkap kebenaran</button>
+            </div>
+            <div class="truth__body prose">
+              <p><strong>“Ai Wenrui” sebenarnya Zhou Hanshan</strong>, kekasih Zhu Ruyuan. Di ponselnya tidak ada kontak bernama Zhou Hanshan, tetapi ada pesan yang diawali “Zhou Hanshan, apa yang harus kita lakukan?”. Dialah yang membujuk teman-temannya ikut ritual. Ia juga tidak bisa mati, karena kemungkinan besar dialah satu-satunya yang menginginkan sesuatu dari patung itu.</p>
+              <p>Ada dua permohonan yang saling terkait. Permohonan Zhu Ruyuan adalah <em>agar patungnya memiliki jiwa</em>. Permohonan Zhou Hanshan adalah <em>agar ia bisa bersama Zhu Ruyuan</em>. Untuk itu hanya ada dua jalan: Zhou Hanshan mati, atau patung itu menjadi manusia. Ia memilih jalan kedua, dan nyawa teman-temannya menjadi bagian dari tagihannya.</p>
+              <blockquote class="pull">“Aku berharap permohonan Zhou Hanshan tidak akan pernah terkabul.”</blockquote>
+              <p>Itulah permohonan Lin Qiushi. Zhou Hanshan menerjang dengan pisau, tetapi Lin Qiushi menendang pisau itu lepas dari tangannya. Di belakang mereka, arwah Zhu Ruyuan menyeringai dan berkata, <em>“sesuai keinginanmu.”</em> Patung itu retak dan runtuh berkeping-keping, sementara Zhou Hanshan memeluk pecahannya sambil meratap.</p>
+              <p>Lin Qiushi menduga yang mengabulkan permohonan selama ini adalah patung itu, yang telah memiliki jiwa berwujud Zhu Ruyuan. Ia juga punya dugaan yang lebih menyakitkan: mungkin Zhu Ruyuan sendiri yang terus berusaha membunuh Zhou Hanshan, karena ia tak ingin kekasihnya menempuh jalan itu lebih jauh.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section id="keluar" aria-labelledby="h-keluar">
+          <div class="sec-head reveal">
+            <span class="sec-num">07 · Kunci &amp; pintu keluar</span>
+            <h2 id="h-keluar" class="sec-title">Setiap utang dibayar</h2>
+          </div>
+          <div class="exit reveal">
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <circle cx="22" cy="30" r="16" fill="none" stroke="#6f9f86" stroke-width="6"/>
+              <rect x="36" y="27" width="76" height="7" fill="#6f9f86"/>
+              <rect x="92" y="34" width="6" height="12" fill="#6f9f86"/>
+              <rect x="104" y="34" width="6" height="16" fill="#6f9f86"/>
+            </svg>
+            <div class="prose">
+              <p>Di antara serpihan patung tergeletak <strong>kunci tembaga kehijauan</strong>. Saat Lin Qiushi dan Gu Longming melangkah keluar dari gudang, terdengar erangan di belakang mereka. Zhou Hanshan terbaring di genangan darah dengan pisau tertancap di perutnya.</p>
+              <p>Keesokan siangnya, pintu besi ditemukan di sudut terpencil <em>perpustakaan</em>. Sebelum pergi, Lin Qiushi memberi isyarat kepada Zuo Sisi agar mulai mencari pintunya. Mata ganti mata: siapa pun yang mencelakai orang lain harus membayar dengan harga yang setimpal.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <nav class="arc-nav" aria-label="Pintu lain">
+    <a href="arc-minator.html" data-leave>
+      <span class="arc-nav__dir">← Pintu sebelumnya</span>
+      <span class="arc-nav__name">Arc Minator</span>
+    </a>
+    <a href="arc-slenderman.html" data-leave>
+      <span class="arc-nav__dir">Pintu berikutnya →</span>
+      <span class="arc-nav__name">Arc Slenderman</span>
+    </a>
+  </nav>
+
+  <footer class="sources">
+    <p><strong>Sumber:</strong> <em>Kaleidoscope of Death</em> (死亡万花筒) karya Xi Zi Xu, bab 97 “Door Eleven” sampai bab 105 “Award Ceremony” (terjemahan Inggris di WebNovel). Ringkasan ditulis ulang dalam bahasa Indonesia.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const tpl = document.getElementById("bust-tpl").innerHTML;
+      document.querySelectorAll("[data-bust]").forEach(el => { el.innerHTML = tpl; });
+      const gallery = document.querySelector("[data-gallery]");
+      for (let i = 0; i < 5; i++) gallery.insertAdjacentHTML("beforeend", tpl);
+    })();
+  </script>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/arc.js"></script>
+</body>
+</html>

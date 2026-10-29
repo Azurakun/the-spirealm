@@ -1,0 +1,63 @@
+/* Arc Teru Teru Bōzu — endless rain, indigo dusk, white cloth */
+
+.arc--teru {
+  --accent: #b52a2a;
+  --accent-soft: rgba(181, 42, 42, 0.14);
+  --tint: #080b12;
+  --cold: #9fb3cf;
+  --f-arc: "Yuji Syuku", "Shippori Mincho B1", serif;
+  --arc-weight: 400;
+  --arc-track: 0.02em;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(90, 120, 170, 0.12), transparent 70%),
+    var(--tint);
+}
+
+.rain-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* ---------- Scene 1: courtyard ---------- */
+.scene--yard { background: linear-gradient(#0d1424, #05070c); }
+.yard-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.chime { transform-origin: 1180px 150px; animation: chime 1.6s ease-in-out infinite; }
+@keyframes chime { 50% { transform: rotate(9deg); } }
+
+/* ---------- Scene 2/3: hanging doll ---------- */
+.doll-hang { width: min(46vw, 220px); }
+.doll-hang svg { width: 100%; height: auto; overflow: visible; }
+.swing { transform-origin: 60px 0; animation: swing 2.2s ease-in-out infinite; }
+@keyframes swing { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+.untie-string { transform-origin: 60px 92px; }
+.scene.is-active .untie-string { animation: untie 1s ease-in 1.2s forwards; }
+@keyframes untie { to { transform: translateY(80px) rotate(30deg); opacity: 0; } }
+.wet { opacity: 0; }
+[data-scene="untie"].is-active .wet { animation: seep 2s ease-out 1.6s forwards; }
+@keyframes seep { to { opacity: 0.7; } }
+
+/* ---------- Scene 4: umbrella ---------- */
+.umb-wrap { position: relative; width: min(70vw, 340px); }
+.umb-wrap svg { width: 100%; height: auto; }
+.scene.is-active .umb { animation: umbopen 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; transform-origin: 170px 150px; }
+@keyframes umbopen { from { transform: scaleX(0.15); } }
+
+/* ---------- Scene 5: dolls in shrine ---------- */
+.scene--shrine { background: radial-gradient(ellipse at 50% 30%, #1a1410, #030303 70%); }
+.dolls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(6px, 2vw, 18px);
+  width: min(86vw, 560px);
+}
+.dolls svg { width: 100%; height: auto; overflow: visible; }
+.dolls .swing { animation-duration: 1.8s; }
+.dolls svg:nth-child(2n) .swing { animation-delay: -0.6s; }
+.dolls svg:nth-child(3n) .swing { animation-delay: -1.1s; }
+.doll-crying { filter: drop-shadow(0 0 0 transparent); }
+.scene.is-active .doll-crying { animation: picked 1.2s ease-out 1.6s forwards; }
+@keyframes picked { to { filter: drop-shadow(0 0 16px rgba(181, 42, 42, 0.9)); } }
+.dolls svg:not(.doll-crying) { transition: opacity 0.6s; }
+.scene.is-active .dolls svg:not(.doll-crying) { animation: dim 1s ease 2s forwards; }
+@keyframes dim { to { opacity: 0.25; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .swing, .chime { animation: none; }
+}

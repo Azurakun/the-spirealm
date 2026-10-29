@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Teru Teru Bōzu — Pintu X · The Spirealm</title>
+  <meta name="description" content="Arc Teru Teru Bōzu: pintu kesepuluh Lin Qiushi dalam Kaleidoscope of Death. Rumah bergaya Jepang yang tak berhenti diguyur hujan, boneka penangkal hujan berisi kepala manusia, dan sebuah balas dendam.">
+  <meta name="theme-color" content="#080b12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 28'%3E%3Crect x='1' y='1' width='18' height='26' fill='%235a3a22' stroke='%239fb3cf'/%3E%3Ccircle cx='15' cy='15' r='1.5' fill='%23e9e2d6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Special+Elite&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/arc.css">
+  <link rel="stylesheet" href="assets/css/arc-teru.css">
+</head>
+<body class="atmos arc arc--teru is-locked" data-drone="52">
+  <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
+  <div class="read-progress" data-read-progress aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="tr-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1a2438"/>
+        <stop offset="1" stop-color="#06080e"/>
+      </linearGradient>
+      <symbol id="tr-yard" viewBox="0 0 1600 900">
+        <rect width="1600" height="900" fill="url(#tr-sky)"/>
+        <!-- wall -->
+        <rect x="0" y="470" width="1600" height="90" fill="#0d1018"/>
+        <rect x="0" y="462" width="1600" height="10" fill="#1d2230"/>
+        <!-- sakura -->
+        <g fill="#05070b">
+          <path d="M820 900 L842 560 C800 520 720 500 660 470 L668 460 C730 480 800 500 846 530 L860 420 C840 380 800 350 760 340 L766 330 C810 340 850 370 866 400 L880 300 L896 300 L890 420 C930 380 990 360 1040 360 L1040 372 C990 376 940 400 900 440 L880 900 Z"/>
+          <circle cx="720" cy="440" r="70" fill="#1a1520"/><circle cx="800" cy="330" r="90" fill="#1a1520"/>
+          <circle cx="960" cy="340" r="100" fill="#1a1520"/><circle cx="1050" cy="400" r="70" fill="#1a1520"/>
+        </g>
+        <!-- eave -->
+        <path d="M0 0 H1600 V130 Q800 90 0 160 Z" fill="#030407"/>
+        <g fill="#030407"><rect x="120" y="120" width="26" height="780"/><rect x="1420" y="110" width="26" height="790"/></g>
+        <rect x="0" y="820" width="1600" height="80" fill="#0a0c12"/>
+        <g class="chime">
+          <line x1="1180" y1="118" x2="1180" y2="150" stroke="#6c7790" stroke-width="2"/>
+          <path d="M1162 150 Q1180 132 1198 150 L1196 176 H1164 Z" fill="#9fb3cf" fill-opacity="0.7"/>
+          <line x1="1180" y1="176" x2="1180" y2="214" stroke="#6c7790" stroke-width="1.5"/>
+          <rect x="1172" y="214" width="16" height="26" fill="#b52a2a" fill-opacity="0.8"/>
+        </g>
+      </symbol>
+      <symbol id="tr-umb" viewBox="0 0 340 300">
+        <path d="M10 150 Q170 -30 330 150 Q300 132 270 150 Q240 132 210 150 Q180 132 150 150 Q120 132 90 150 Q60 132 40 150 Q26 140 10 150 Z" fill="#a4483a"/>
+        <g stroke="#5e2018" stroke-width="2" fill="none"><path d="M170 8 L40 150"/><path d="M170 8 L90 150"/><path d="M170 8 L150 150"/><path d="M170 8 L210 150"/><path d="M170 8 L270 150"/></g>
+        <rect x="167" y="150" width="6" height="140" fill="#c8b48a"/>
+        <path d="M173 290 Q190 296 186 280" stroke="#c8b48a" stroke-width="6" fill="none"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= CINEMATIC ================= -->
+  <div class="cine" data-cine role="region" aria-label="Adegan pembuka Arc Teru Teru Bōzu">
+    <div class="cine__top">
+      <span class="eyebrow">Pintu X <span class="dot">◆</span> てるてる坊主</span>
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+
+    <div class="cine__stage">
+      <!-- 1 -->
+      <div class="scene scene--yard" data-scene="yard" data-dur="3800" data-sfx="wave@100,wave@2000">
+        <svg class="yard-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#tr-yard"/></svg>
+        <canvas class="rain-canvas" data-rain aria-hidden="true"></canvas>
+        <p class="scene__caption"><span data-type>Sebuah rumah bergaya Jepang. Hujan turun tanpa henti.</span><small>Pintu kesepuluh Lin Qiushi</small></p>
+      </div>
+
+      <!-- 2 -->
+      <div class="scene" data-scene="hang" data-dur="3600">
+        <div class="scene__art"><div class="doll-hang" data-doll aria-hidden="true"></div></div>
+        <p class="scene__caption"><span data-type>Di ujung lorong tergantung boneka penangkal hujan. Terlalu besar. Terlalu berat.</span></p>
+      </div>
+
+      <!-- 3 -->
+      <div class="scene" data-scene="untie" data-dur="3800" data-sfx="thud@1300">
+        <div class="scene__art"><div class="doll-hang" data-doll="untie" aria-hidden="true"></div></div>
+        <p class="scene__caption"><span data-type>Talinya dilepas. Isinya kepala manusia yang pucat terendam air.</span></p>
+      </div>
+
+      <!-- 4 -->
+      <div class="scene scene--yard" data-scene="umbrella" data-dur="3800" data-sfx="wave@200">
+        <canvas class="rain-canvas" data-rain aria-hidden="true"></canvas>
+        <div class="scene__art">
+          <div class="umb-wrap" aria-hidden="true"><svg viewBox="0 0 340 300"><g class="umb"><use href="#tr-umb"/></g></svg></div>
+        </div>
+        <p class="scene__caption"><span data-type>Siapa yang kehujanan, esok hari menjadi boneka berikutnya.</span></p>
+      </div>
+
+      <!-- 5 -->
+      <div class="scene scene--shrine" data-scene="shrine" data-dur="3800" data-flash="1700" data-sfx="sting@1700">
+        <div class="scene__art"><div class="dolls" data-dolls aria-hidden="true"></div></div>
+        <p class="scene__caption">Di kuil itu, hanya satu boneka yang menangis.</p>
+      </div>
+    </div>
+
+    <div class="cine__flash" data-flash aria-hidden="true"></div>
+    <div class="cine__ui">
+      <span class="cine__label">Tekan Esc untuk melewati</span>
+      <button class="btn-ghost" type="button" data-skip>Lewati adegan <span aria-hidden="true">›</span></button>
+    </div>
+    <div class="cine__progress" aria-hidden="true"><span data-cine-progress></span></div>
+  </div>
+
+  <!-- ================= PAGE ================= -->
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" data-leave aria-label="Kembali ke lorong pintu">
+      <svg viewBox="0 0 14 20" aria-hidden="true"><rect x="0.5" y="0.5" width="13" height="19" fill="none" stroke="currentColor"/><circle cx="10.5" cy="10.5" r="1" fill="currentColor"/></svg>
+      ← Lorong
+    </a>
+    <div class="topbar__actions">
+      <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+        <span data-sound-label>Suara: Mati</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="arc-hero" aria-labelledby="arc-title">
+      <div class="arc-hero__bg" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><use href="#tr-yard"/></svg>
+      </div>
+      <div class="arc-hero__inner">
+        <p class="eyebrow">Pintu X <span class="dot">◆</span> Bab 90–95 <span class="dot">◆</span> Kaleidoscope of Death</p>
+        <h1 id="arc-title" class="arc-title" data-arc-title>
+          <span class="arc-title__pre">Arc</span>
+          Teru Teru Bōzu
+        </h1>
+        <p class="arc-sub">てるてる坊主 · boneka penangkal hujan</p>
+        <p class="lead arc-hero__lead">Pintu tanpa petunjuk. Di sini hujan bisa membunuh, dan langit cerah dibayar dengan sebuah kepala. Lin Qiushi masuk bukan hanya untuk bertahan hidup, tetapi juga untuk membalas kematian seorang sahabat.</p>
+        <div class="arc-hero__actions">
+          <a class="btn-solid" href="#ringkasan">Baca kisahnya</a>
+          <button class="btn-ghost" type="button" data-replay>↺ Putar ulang adegan</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="arc-body">
+      <nav class="toc" aria-label="Daftar isi">
+        <p class="eyebrow toc__label">Isi berkas</p>
+        <ol>
+          <li><a href="#ringkasan">Ringkasan</a></li>
+          <li><a href="#legenda">Legenda di balik pintu</a></li>
+          <li><a href="#aturan">Syarat kematian</a></li>
+          <li><a href="#kronologi">Kronologi</a></li>
+          <li><a href="#tokoh">Tokoh</a></li>
+          <li><a href="#kebenaran">Kebenaran</a></li>
+          <li><a href="#keluar">Kunci &amp; pintu keluar</a></li>
+        </ol>
+      </nav>
+
+      <article class="story">
+        <!-- 01 -->
+        <section id="ringkasan" aria-labelledby="h-ringkasan">
+          <div class="sec-head reveal">
+            <span class="sec-num">01 · Ringkasan</span>
+            <h2 id="h-ringkasan" class="sec-title">Pintu milik orang lain</h2>
+          </div>
+          <div class="prose reveal">
+            <p>Pintu kesepuluh Lin Qiushi sebenarnya milik <strong>Cue Xueyi</strong>, yang masuk bersama rekannya, <strong>Lin Xingping</strong>, dan seorang klien yang baru pertama kali memasuki pintu, Gu Yuansi. Lin Qiushi dan Ruan Nanzhu yakin keduanya menjebak orang yang menyewa mereka sampai mati demi merebut pintu, termasuk <strong>Wu Qi</strong>, sahabat lama Lin Qiushi, dan kekasihnya.</p>
+            <p>Ruan Nanzhu menyusup sebagai “Xiao Xiaoyu”, gadis berdandan polos yang mengaku baru di pintu keduanya. Lin Qiushi ikut sebagai kekasihnya. Tubuh Ruan Nanzhu di dalam pintu ini rapuh karena luka dari pintu kesembilan belum sembuh. Mereka tiba di sebuah rumah bergaya Jepang dengan halaman, pohon sakura, dan lonceng angin, di tengah hujan yang deras sekali.</p>
+          </div>
+          <dl class="facts reveal" style="margin-top:28px">
+            <div><dt>Latar</dt><dd>Rumah Jepang di sebuah kota yang selalu hujan</dd></div>
+            <div><dt>Petunjuk</dt><dd>Tidak ada</dd></div>
+            <div><dt>Pemilik pintu</dt><dd>Cue Xueyi</dd></div>
+            <div><dt>Entitas</dt><dd>Teru teru bōzu, arwah biksu, anak-anak bernyanyi</dd></div>
+            <div><dt>Benda kunci</dt><dd>Payung kertas minyak</dd></div>
+            <div><dt>Kunci</dt><dd>Tongkat biksu yang berubah menjadi kunci</dd></div>
+          </dl>
+          <div class="hint reveal">
+            <span class="hint__label">Petunjuk pintu</span>
+            <p class="hint__text">— kosong —</p>
+            <p class="hint__note">Ini pintu kedua yang dimasuki Lin Qiushi tanpa petunjuk. Semua aturan harus ditebak dari dalam.</p>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="legenda" aria-labelledby="h-legenda">
+          <div class="sec-head reveal">
+            <span class="sec-num">02 · Legenda di balik pintu</span>
+            <h2 id="h-legenda" class="sec-title">Biksu yang gagal menghentikan hujan</h2>
+          </div>
+          <div class="prose reveal">
+            <p><em>Teru teru bōzu</em> adalah boneka kain putih sederhana yang digantung anak-anak Jepang di jendela supaya besok cerah. Ruan Nanzhu menceritakan versi kelamnya: seorang biksu berjanji kepada penduduk sebuah kota bahwa ia bisa menghentikan hujan. Doanya gagal. Penduduk yang marah memenggal kepalanya, membungkusnya dengan kain putih, lalu menggantungnya tinggi-tinggi. Sesudah itu hujan berhenti.</p>
+            <p>Ada pula lagu anak-anak tentang boneka itu. Di bait-bait awal, anak-anak menjanjikan lonceng emas dan sake manis kepada boneka itu jika besok cerah.</p>
+          </div>
+          <div class="versus reveal">
+            <div>
+              <h3>Tradisi</h3>
+              <p>Boneka kain putih berkepala bulat, digantung di jendela sambil berharap cuaca cerah. Lucu dan polos.</p>
+            </div>
+            <div>
+              <h3>Versi di dalam pintu</h3>
+              <p>Boneka di ujung lorong dibuat dari kepala manusia sungguhan, kepala korban yang kehujanan. Selama boneka itu tergantung, langit cerah. Begitu diturunkan, hujan turun lagi.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section id="aturan" aria-labelledby="h-aturan">
+          <div class="sec-head reveal">
+            <span class="sec-num">03 · Syarat kematian</span>
+            <h2 id="h-aturan" class="sec-title">Jangan sampai basah</h2>
+          </div>
+          <ol class="deathrules" role="list">
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">雨</span>
+              <div>
+                <h3>Terkena hujan</h3>
+                <p>Siapa pun yang kehujanan akan mati malam itu. Keesokan harinya kepalanya menjadi teru teru bōzu yang baru di ujung lorong.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">吊</span>
+              <div>
+                <h3>Boneka mengendalikan cuaca</h3>
+                <p>Saat boneka diturunkan dan lagunya dibacakan, hujan deras langsung turun. Saat boneka digantung kembali, langit langsung cerah. Siapa pun yang memegang boneka itu memegang nyawa orang-orang di luar.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">籠</span>
+              <div>
+                <h3>Nyanyian “burung di dalam sangkar”</h3>
+                <p>Pada malam hari, anak-anak muncul di halaman sambil bergandengan tangan dan bernyanyi mengelilingi korban. Boneka yang jatuh menggelinding di lorong sambil merintih, “Tolong… di mana tubuhku…”. Jangan menjawabnya.</p>
+              </div>
+            </li>
+            <li class="deathrule reveal">
+              <span class="deathrule__mark" aria-hidden="true">傘</span>
+              <div>
+                <h3>Hanya satu payung yang aman</h3>
+                <p>Payung biasa tidak bisa melindungi dari setiap tetes hujan. Hanya ada satu payung kertas minyak tua yang menciptakan ruang kedap hujan, cukup untuk dua orang.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 04 -->
+        <section id="kronologi" aria-labelledby="h-kronologi">
+          <div class="sec-head reveal">
+            <span class="sec-num">04 · Kronologi</span>
+            <h2 id="h-kronologi" class="sec-title">Hujan, payung, dan jebakan</h2>
+          </div>
+          <ol class="timeline" role="list">
+            <li class="tl reveal">
+              <span class="tl__when">Hari pertama</span>
+              <h3>Boneka yang terlalu besar</h3>
+              <p>Seorang pemain menurunkan teru teru bōzu raksasa di ujung lorong atas permintaan Lin Xingping. Ruan Nanzhu membuka ikatan talinya dan menemukan kepala manusia yang pucat terendam air. Ketika ia membacakan lagu boneka itu, hujan sebesar butir kacang langsung turun. Ketika boneka digantung kembali, langit cerah.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Malam pertama</span>
+              <h3>Sosok berpayung</h3>
+              <p>Ruan Nanzhu melihat seseorang berpayung berdiri di halaman di bawah hujan, mengawasi seperti orang tua yang tidak suka anak-anak melanggar aturan, terutama membasahi lantai. Esoknya boneka di lorong berganti wajah: korban baru sudah muncul.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari kedua · kolong lantai</span>
+              <h3>Payung dan kantong hitam</h3>
+              <p>Dipandu sepasang mata yang menyentuh betis Lin Qiushi dari bawah lantai, Ruan Nanzhu merangkak ke kolong dan menarik keluar payung kertas minyak tua beserta kantong kain hitam berisi sisa jasad. Payung itu masih basah, mungkin baru dipakai semalam.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Malam kedua</span>
+              <h3>Boneka yang menggelinding</h3>
+              <p>Tali boneka putus. Boneka itu menggelinding di lorong sambil memohon pertolongan dengan suara pemain yang hilang sehari sebelumnya, sementara anak-anak bernyanyi di halaman: “burung di dalam sangkar, kapan kau akan keluar…”. Ruan Nanzhu menutup pintu tepat sebelum boneka itu sampai.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari ketiga · hutan bambu</span>
+              <h3>Kuil yang terbengkalai</h3>
+              <p>Lin Xingping “menyarankan” mereka menyusuri jalan setapak di hutan bambu yang jauh, berharap mereka kehujanan di jalan pulang. Dengan payung, keduanya tiba di sebuah kuil reyot di samping sumur kering. Langit-langit kuil penuh teru teru bōzu yang tersenyum. Di altar duduk patung biksu tanpa kepala.</p>
+            </li>
+            <li class="tl reveal">
+              <span class="tl__when">Hari keempat · ruang makan</span>
+              <h3>Jebakan dibalik</h3>
+              <p>Ruan Nanzhu diam-diam menyelipkan kertas ke saku para pemain lain: “Hari ini akan hujan, jangan keluar halaman.” Kepada Lin Xingping, ia berpura-pura polos dan bercerita tentang foto-foto kuil, seolah berdoa di sana membuat orang kebal hujan. Lin Xingping dan Cue Xueyi pun berangkat ke kuil.</p>
+            </li>
+            <li class="tl tl--death reveal">
+              <span class="tl__when">Hari keempat · siang</span>
+              <h3>Hujan yang mendadak</h3>
+              <p>Lin Qiushi menurunkan boneka dan Ruan Nanzhu membacakan lagunya. Hujan deras turun. Keduanya pulang basah kuyup. Dengan suara menangis, “Xiao Xiaoyu” menyarankan mereka segera ke kuil untuk diselamatkan. Malam itu Lin Xingping tewas, dan esok paginya kepalanya menjadi boneka di lorong.</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 05 -->
+        <section id="tokoh" aria-labelledby="h-tokoh">
+          <div class="sec-head reveal">
+            <span class="sec-num">05 · Tokoh</span>
+            <h2 id="h-tokoh" class="sec-title">Pemburu dan yang diburu</h2>
+          </div>
+          <div class="cast">
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Lin Qiushi</h3>
+              <p class="person__alias">“Pacar” Xiao Xiaoyu</p>
+              <p>Ia masuk demi Wu Qi. Pendengarannya menangkap setiap langkah di lorong pada malam hari.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Pemain · Obsidian</span>
+              <h3>Ruan Nanzhu</h3>
+              <p class="person__alias">Menyamar sebagai “Xiao Xiaoyu”</p>
+              <p>Rapuh secara fisik, tetapi tajam sepenuhnya. Ia menemukan payung itu dan merancang jebakan balik.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">Pemain</span>
+              <h3>Lin Xingping</h3>
+              <p class="person__alias">Ramah di permukaan</p>
+              <p>Ia sabar menjawab pertanyaan pemain baru, tetapi selalu menyuruh orang lain mengambil risiko lebih dulu.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role person__role--dead">Pemain</span>
+              <h3>Cue Xueyi</h3>
+              <p class="person__alias">Pemilik pintu</p>
+              <p>Ia jijik pada pasangan “norak” itu, tanpa sadar siapa sebenarnya yang sedang memburunya.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Klien</span>
+              <h3>Gu Yuansi</h3>
+              <p class="person__alias">Pintu pertamanya</p>
+              <p>Ia gemetar sejak melihat pintu besi, dan tak berani menatap Ruan Nanzhu maupun Lin Qiushi.</p>
+            </article>
+            <article class="person reveal">
+              <span class="person__role">Arwah</span>
+              <h3>Sang biksu</h3>
+              <p class="person__alias">Patung tanpa kepala</p>
+              <p>Biksu yang dipenggal karena gagal menghentikan hujan. Kepalanya tersembunyi di antara ratusan boneka.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="kebenaran" aria-labelledby="h-kebenaran">
+          <div class="sec-head reveal">
+            <span class="sec-num">06 · Kebenaran</span>
+            <h2 id="h-kebenaran" class="sec-title">Balas dendam lewat hujan</h2>
+          </div>
+          <div class="truth reveal" data-truth>
+            <div class="truth__gate">
+              <p>Spoiler: akhir kisah</p>
+              <button class="btn-solid" type="button" data-truth-btn>Ungkap kebenaran</button>
+            </div>
+            <div class="truth__body prose">
+              <p>Di dunia pintu, membunuh sesama pemain secara langsung adalah hal terlarang. Jadi Ruan Nanzhu tidak mengotori tangannya. Ia hanya mengatur cuaca. Lin Xingping memasang jebakan untuk mereka, tetapi justru dirinya yang tak pernah tahu dari mana hujan dadakan itu datang. Ia mati dengan mata terbuka, tak puas sampai akhir.</p>
+              <p>Cue Xueyi tak pernah kembali dari kuil. Ketika Lin Qiushi dan Ruan Nanzhu datang di bawah hujan dengan payung tua itu, kuil yang dulu reyot sudah pulih ke masa jayanya. Dupa menyala, sesaji penuh, dan sumur yang dulu kering kini berbuih. Tangan-tangan tengkorak berusaha merangkak keluar dari sumur itu, tetapi terus dilepaskan oleh kekuatan tak terlihat.</p>
+              <blockquote class="pull">Semua boneka di langit-langit tersenyum, kecuali satu yang menangis.</blockquote>
+              <p>Kepala Cue Xueyi tertancap di tongkat patung biksu, matanya masih bergerak. Patung itu bangkit, menunjuk lehernya yang kosong, lalu berjalan pelan menuju pintu. Jika ia sampai keluar ke bawah hujan, sesuatu yang buruk akan terjadi. Di antara ratusan boneka yang menjerit, Lin Qiushi menemukan satu-satunya boneka yang digambar menangis, lengkap dengan setetes air mata. Di dalamnya ada kepala sang biksu: gundul, berbekas luka bakar, dan tersenyum tenang.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section id="keluar" aria-labelledby="h-keluar">
+          <div class="sec-head reveal">
+            <span class="sec-num">07 · Kunci &amp; pintu keluar</span>
+            <h2 id="h-keluar" class="sec-title">Amitabha</h2>
+          </div>
+          <div class="exit reveal">
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              <circle cx="22" cy="30" r="16" fill="none" stroke="#6f9f86" stroke-width="6"/>
+              <rect x="36" y="27" width="76" height="7" fill="#6f9f86"/>
+              <rect x="92" y="34" width="6" height="12" fill="#6f9f86"/>
+              <rect x="104" y="34" width="6" height="16" fill="#6f9f86"/>
+            </svg>
+            <div class="prose">
+              <p>Ruan Nanzhu meletakkan kepala itu di leher patung. Kepala itu membuka mata dan berucap, <em>“Amitabha.”</em> Tongkat di tangan biksu berubah menjadi <strong>kunci tembaga kehijauan</strong> dan jatuh berdenting ke lantai. Kepala Cue Xueyi menghitam lalu membatu.</p>
+              <p>Hujan berhenti seketika. Sang biksu berjalan keluar, melempar kepala batu itu ke sumur, lalu ikut melompat ke dalamnya. Air surut dan tengkorak-tengkorak di dasar sumur lenyap, terbebas bersama dendamnya. Di tempat patung tadi berdiri, kini muncul sebuah pintu besi hitam.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <nav class="arc-nav" aria-label="Pintu lain">
+    <a href="arc-slenderman.html" data-leave>
+      <span class="arc-nav__dir">← Pintu sebelumnya</span>
+      <span class="arc-nav__name">Arc Slenderman</span>
+    </a>
+    <a href="arc-hako-onna.html" data-leave>
+      <span class="arc-nav__dir">Pintu berikutnya →</span>
+      <span class="arc-nav__name">Arc Hako Onna</span>
+    </a>
+  </nav>
+
+  <footer class="sources">
+    <p><strong>Sumber:</strong> <em>Kaleidoscope of Death</em> (死亡万花筒) karya Xi Zi Xu, bab 90 “Tenth Door” sampai bab 95 “Back to Reality” (terjemahan Inggris di WebNovel). Ringkasan ditulis ulang dalam bahasa Indonesia. Lirik lagu hanya diparafrasekan.</p>
+  </footer>
+
+  <script>
+    (function () {
+      function doll(opts) {
+        const o = opts || {};
+        const mouth = o.cry
+          ? '<path d="M50 74 Q60 66 70 74" stroke="#2a2420" stroke-width="2.4" fill="none"/><path d="M48 60 C48 66 46 70 47 74" stroke="#4b6c96" stroke-width="2" fill="none"/>'
+          : '<path d="M48 70 Q60 80 72 70" stroke="#2a2420" stroke-width="2.4" fill="none"/>';
+        const string = o.untie
+          ? '<g class="untie-string"><path d="M30 90 Q60 98 90 90" stroke="#8a7d6a" stroke-width="3" fill="none"/></g>'
+          : '<path d="M30 90 Q60 98 90 90" stroke="#8a7d6a" stroke-width="3" fill="none"/>';
+        return '<svg viewBox="0 0 120 210"' + (o.cry ? ' class="doll-crying"' : '') + '><g class="swing">' +
+          '<line x1="60" y1="0" x2="60" y2="32" stroke="#bfb6a4" stroke-width="1.5"/>' +
+          '<path d="M34 86 C24 120 16 160 8 200 Q30 192 44 202 Q60 192 76 202 Q90 192 112 200 C104 160 96 120 86 86 Z" fill="#ece8df"/>' +
+          '<circle cx="60" cy="62" r="32" fill="#f4f1ea"/>' +
+          '<path class="wet" d="M44 92 C46 118 40 140 46 166 C52 142 50 120 58 96 C60 128 66 152 62 186 C74 156 70 124 72 94 C76 112 80 128 78 146 C86 126 82 108 80 92 Z" fill="#5e1f1a"/>' +
+          '<circle cx="50" cy="56" r="3" fill="#2a2420"/><circle cx="70" cy="56" r="3" fill="#2a2420"/>' +
+          mouth + string + '</g></svg>';
+      }
+      document.querySelectorAll("[data-doll]").forEach(el => { el.innerHTML = doll({ untie: el.dataset.doll === "untie" }); });
+      const wrap = document.querySelector("[data-dolls]");
+      for (let i = 0; i < 10; i++) wrap.insertAdjacentHTML("beforeend", doll({ cry: i === 7 }));
+    })();
+
+    window.arcHooks = (function () {
+      function rain(scene) {
+        const c = scene.querySelector("[data-rain]");
+        const ctx = c.getContext("2d");
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const resize = () => { c.width = c.clientWidth * dpr; c.height = c.clientHeight * dpr; };
+        resize();
+        const umbrella = scene.dataset.scene === "umbrella";
+        const drops = Array.from({ length: 260 }, () => ({ x: Math.random(), y: Math.random(), l: 0.02 + Math.random() * 0.03, s: 0.012 + Math.random() * 0.012 }));
+        let id;
+        const draw = () => {
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.strokeStyle = "rgba(170,190,220,0.45)";
+          ctx.lineWidth = 1 * dpr;
+          ctx.beginPath();
+          drops.forEach(d => {
+            d.y += d.s; d.x -= d.s * 0.12;
+            if (d.y > 1) { d.y = -0.05; d.x = Math.random() * 1.1; }
+            // Umbrella: drops part around a dome in the centre
+            if (umbrella) {
+              const dx = (d.x - 0.5) * c.width / c.height, dy = d.y - 0.36;
+              if (dy > -0.16 && Math.abs(dx) < 0.26 && dy < 0.3) return;
+            }
+            ctx.moveTo(d.x * c.width, d.y * c.height);
+            ctx.lineTo((d.x - d.l * 0.15) * c.width, (d.y + d.l) * c.height);
+          });
+          ctx.stroke();
+          id = requestAnimationFrame(draw);
+        };
+        draw();
+        window.addEventListener("resize", resize);
+        return () => { cancelAnimationFrame(id); window.removeEventListener("resize", resize); };
+      }
+      return { yard: rain, umbrella: rain };
+    })();
+  </script>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/arc.js"></script>
+</body>
+</html>
