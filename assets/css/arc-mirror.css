@@ -1,0 +1,24 @@
+/* Arc Mirror Hotel — chrome glass, wide modern caps, fire behind the reflection */
+.arc--mirror {
+  --accent: #ff8a3d;
+  --accent-soft: rgba(255, 138, 61, 0.14);
+  --tint: #0c0a0a;
+  --cold: #c8d0d8;
+  --f-arc: "Michroma", "Eurostile", sans-serif;
+  --arc-weight: 400;
+  --arc-track: 0.04em;
+  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255, 138, 61, 0.08), transparent 70%), var(--tint);
+}
+.arc--mirror .arc-title { font-size: clamp(2.4rem, 1.2rem + 5.5vw, 6rem); text-transform: uppercase; }
+.arc--mirror .sec-title { font-size: clamp(1.4rem, 1rem + 1.8vw, 2.3rem); }
+.arc--mirror .person h3 { font-size: 1.05rem; }
+.arc--mirror .btn-solid { color: #0c0a0a; }
+.arc--mirror .btn-solid:hover { color: var(--ink); }
+.scene--glass { background: linear-gradient(#24201c, #070606); }
+.split { position: relative; width: min(88vw, 620px); aspect-ratio: 1.6; border: 2px solid #8a939c; overflow: hidden; }
+.split__real, .split__mirror { position: absolute; left: 0; right: 0; height: 50%; }
+.split__real { top: 0; background: linear-gradient(#0c0c0e, #050505); }
+.split__mirror { bottom: 0; background: linear-gradient(#2a120a, #050505); border-top: 2px solid #c8d0d8; }
+.split .fx-canvas { position: absolute; inset: auto 0 0 0; height: 50%; }
+.split__mirror::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 30% 70% at 85% 60%, rgba(255, 120, 40, 0.7), transparent 70%); }
+.split__real::after { content: ""; position: absolute; inset: 20% 10% 0 10%; border: 1px solid #222; border-bottom: 0; transform: perspective(300px) rotateX(20deg); }

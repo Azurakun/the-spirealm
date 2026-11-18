@@ -93,18 +93,33 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  max-width: 980px;
+  max-width: 1180px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 64px) clamp(12px, 2.4vw, 32px);
   position: relative;
+  counter-reset: door;
 }
 .doors__item { display: flex; justify-content: center; }
-.doors__item:nth-child(n + 4) { transition-delay: 0.15s; }
+.doors__item:nth-child(5n + 2) { transition-delay: 0.06s; }
+.doors__item:nth-child(5n + 3) { transition-delay: 0.12s; }
+.doors__item:nth-child(5n + 4) { transition-delay: 0.18s; }
+.doors__item:nth-child(5n + 5) { transition-delay: 0.24s; }
+
+/* Ordinal above each door: the list number */
+.door__ord {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+  margin-bottom: -6px;
+  transition: color 0.3s;
+}
+.door:hover .door__ord, .door:focus-visible .door__ord { color: var(--glow); }
 
 /* ---------- Door component ---------- */
 .door {
-  --w: clamp(104px, 15vw, 150px);
+  --w: clamp(84px, 9.5vw, 128px);
   --glow: #d01b22;
   appearance: none;
   background: none;
@@ -222,19 +237,28 @@
   background: #0b0a0c;
   color: var(--ink);
   border: 1px solid rgba(233, 226, 214, 0.2);
-  padding: 8px 14px 7px;
+  padding: 8px 10px 7px;
+  max-width: 100%;
+  min-height: 2.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-family: var(--f-mono);
-  font-size: clamp(0.7rem, 0.62rem + 0.35vw, 0.9rem);
-  letter-spacing: 0.14em;
+  font-size: clamp(0.62rem, 0.56rem + 0.25vw, 0.78rem);
+  line-height: 1.3;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  white-space: nowrap;
+  text-wrap: balance;
   transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 .door__meta {
   margin-top: -8px;
   font-family: var(--f-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: center;
   color: var(--ink-faint);
   transition: color 0.3s;
 }
@@ -388,9 +412,13 @@ body.is-entering .doors__item.is-target .door__frame {
   .rules__list { grid-template-columns: repeat(2, minmax(0, 1fr)); border-left: 0; }
   .rule { border-right: 0; border-top: 1px solid var(--rule); padding: 20px 20px 24px 0; }
 }
+@media (max-width: 980px) {
+  .doors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .door { --w: clamp(96px, 18vw, 130px); }
+}
 @media (max-width: 640px) {
   .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .door { --w: clamp(104px, 32vw, 140px); }
+  .door { --w: clamp(96px, 30vw, 130px); }
 }
 @media (max-width: 480px) {
   .rules__list { grid-template-columns: 1fr; }
@@ -401,4 +429,278 @@ body.is-entering .doors__item.is-target .door__frame {
   .door__leaf, .door.is-opening .door__leaf { transition: none; }
   .door__frame::after, .hub-hero__instr span { animation: none; }
   body.is-entering .doors__item.is-target .door__frame { transform: none; }
+}
+
+/* ==========================================================================
+   LORONG PANJANG — the doors as one long corridor you walk through.
+   One door is in focus at a time; neighbours recede along the walls.
+   ========================================================================== */
+.corridor { padding: 10px 0 110px; perspective: none; }
+.corridor__floor { height: 55%; }
+
+.corridor__bar {
+  max-width: 1180px;
+  margin: 0 auto 6px;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+.corridor__count {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+}
+.corridor__count [data-count] { color: var(--accent); font-size: 1.1rem; }
+.corridor__nav { display: flex; gap: 8px; }
+.corridor__btn { width: 44px; height: 44px; padding: 0; justify-content: center; font-size: 1.2rem; letter-spacing: 0; }
+
+.corridor__track {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 36px 0 18px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+.corridor__track::-webkit-scrollbar { display: none; }
+.corridor__track:focus-visible { outline: none; }
+.corridor__track:focus-visible .is-focus .door__frame { outline: 2px solid var(--glow); outline-offset: 10px; }
+
+.corridor .doors {
+  --item: clamp(190px, 21vw, 250px);
+  display: flex;
+  grid-template-columns: none;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  gap: clamp(28px, 6vw, 96px);
+  padding-inline: calc(50vw - var(--item) / 2);
+}
+.corridor .doors__item {
+  flex: 0 0 var(--item);
+  scroll-snap-align: center;
+  opacity: 0.32;
+  transform: scale(0.74);
+  filter: brightness(0.55) saturate(0.7);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+}
+.corridor .doors__item.is-near { opacity: 0.6; transform: scale(0.84); filter: brightness(0.75); }
+.corridor .doors__item.is-focus { opacity: 1; transform: none; filter: none; }
+
+.corridor .door { --w: clamp(150px, 16vw, 200px); max-width: none; gap: 14px; }
+.corridor .door__frame { transition: transform 0.6s var(--ease-out); }
+.corridor .doors__item.is-left .door__frame { transform: perspective(700px) rotateY(32deg); }
+.corridor .doors__item.is-right .door__frame { transform: perspective(700px) rotateY(-32deg); }
+.corridor .is-focus .door__leaf { transform: rotateY(-12deg); }
+.corridor .is-focus .door__light { opacity: 0.75; }
+.corridor .is-focus .door__frame::after { opacity: 0.3; }
+.corridor .door__meta { display: none; }
+.corridor .door__ord { font-size: 0.8rem; }
+.corridor .is-focus .door__ord { color: var(--glow); }
+.corridor .door__plate { font-size: 0.72rem; }
+
+.corridor__caption {
+  max-width: 600px;
+  margin: 8px auto 0;
+  padding: 0 var(--gutter);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  min-height: 210px;
+}
+.corridor__caption .eyebrow [data-cap-num] { color: var(--cap, var(--accent)); }
+.corridor__name { text-shadow: 0 0 40px color-mix(in srgb, var(--cap, transparent) 35%, transparent); }
+.corridor__name {
+  margin: 10px 0 10px;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3.2rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.corridor__tease {
+  margin: 0 auto 22px;
+  max-width: 44ch;
+  font-style: italic;
+  color: var(--ink-dim);
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.corridor__caption.is-swap .corridor__name,
+.corridor__caption.is-swap .corridor__tease { animation: cap-in 0.5s var(--ease-out); }
+@keyframes cap-in { from { opacity: 0; transform: translateY(6px); } }
+
+.corridor__rail {
+  list-style: none;
+  margin: 26px auto 0;
+  padding: 0 var(--gutter);
+  max-width: 760px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  z-index: 2;
+}
+.corridor__rail button {
+  appearance: none;
+  min-width: 44px;
+  height: 36px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-faint);
+  font-family: var(--f-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.corridor__rail button:hover { color: var(--ink); border-color: var(--rule-strong); }
+.corridor__rail button[aria-current="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-soft); }
+
+@media (max-width: 640px) {
+  .corridor .doors { --item: 58vw; gap: 18px; }
+  .corridor .door { --w: clamp(130px, 40vw, 180px); }
+  .corridor__rail button { min-width: 38px; height: 34px; font-size: 0.78rem; }
+  .corridor__caption { min-height: 230px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .corridor__track { scroll-behavior: auto; }
+  .corridor .doors__item, .corridor .door__frame { transition: none; }
+}
+
+/* ==========================================================================
+   LINGKARAN PINTU — the doors stand on a turning ring that never ends.
+   JS sets --a (each door's angle), --r (ring radius) and --ad (distance
+   from the front, in doors) and rotates .doors.
+   ========================================================================== */
+.corridor__track {
+  overflow: hidden;
+  scroll-snap-type: none;
+  perspective: 1500px;
+  perspective-origin: 50% 40%;
+  padding: 44px 0 26px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.corridor__track.is-dragging { cursor: grabbing; }
+.corridor .doors {
+  display: block;
+  position: relative;
+  width: var(--item);
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+  gap: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+.corridor .doors.is-instant { transition: none; }
+.corridor .doors__item,
+.corridor .doors__item.is-near,
+.corridor .doors__item.is-focus {
+  position: absolute;
+  inset: 0 0 auto 0;
+  transform: rotateY(var(--a)) translateZ(var(--r));
+  backface-visibility: hidden;
+  opacity: max(0, calc(1 - var(--ad, 0) * 0.24));
+  filter: brightness(calc(1 - var(--ad, 0) * 0.16)) saturate(calc(1 - var(--ad, 0) * 0.12));
+  transition: opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+}
+.corridor .doors__item.is-back { visibility: hidden; pointer-events: none; }
+.corridor .doors__item.is-left .door__frame,
+.corridor .doors__item.is-right .door__frame { transform: none; }
+.corridor .door__plate { opacity: calc(1 - var(--ad, 0) * 0.35); }
+.corridor .door { -webkit-user-drag: none; }
+.corridor .door * { pointer-events: none; }
+.corridor .door { pointer-events: auto; }
+
+/* The floor of the ring: a faint circle the doors stand on */
+.corridor__track::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: min(90vw, 980px);
+  height: 120px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(208, 27, 34, 0.12), transparent 65%);
+  border: 1px solid rgba(233, 226, 214, 0.05);
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .corridor .doors { --item: 46vw; }
+  .corridor__track { perspective: 900px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .corridor .doors { transition: none; }
+}
+.corridor .doors__item.is-focus { transform: rotateY(var(--a)) translateZ(calc(var(--r) + 70px)); }
+.corridor .doors__item { transition: opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+
+/* ---- 3D circle, seen from slightly above: every door stays on stage ---- */
+.corridor__track {
+  perspective: 1100px;
+  perspective-origin: 50% -40%;
+  padding: 170px 0 30px;
+}
+.corridor .doors { transform: none; transition: none; }
+.corridor .doors__item,
+.corridor .doors__item.is-near,
+.corridor .doors__item.is-focus,
+.corridor .doors__item.is-back {
+  visibility: visible;
+  backface-visibility: visible;
+  pointer-events: auto;
+  transition: none;
+  opacity: max(0.3, calc(1 - var(--ad, 0) * 0.11));
+  filter: brightness(max(0.35, calc(1 - var(--ad, 0) * 0.1))) saturate(max(0.4, calc(1 - var(--ad, 0) * 0.1)));
+}
+.corridor .door__plate { opacity: max(0, calc(1 - var(--ad, 0) * 0.3)); }
+.corridor .door__ord { opacity: max(0.35, calc(1 - var(--ad, 0) * 0.12)); }
+/* the floor of the circle */
+.corridor__track::after {
+  bottom: 6px;
+  width: min(96vw, 1100px);
+  height: 230px;
+  background: radial-gradient(ellipse at 50% 55%, rgba(208, 27, 34, 0.1), transparent 62%);
+  border: 1px solid rgba(233, 226, 214, 0.07);
+}
+@media (max-width: 640px) {
+  .corridor__track { perspective: 700px; padding-top: 120px; }
+  .corridor__track::after { height: 150px; }
+}
+.corridor__track { padding-bottom: 96px; }
+@media (max-width: 640px) { .corridor__track { padding-bottom: 70px; } }
+@media (max-width: 640px) {
+  .corridor__track { perspective: 800px; perspective-origin: 50% -18%; padding-top: 200px; }
+}
+.corridor .doors__item,
+.corridor .doors__item.is-near,
+.corridor .doors__item.is-focus,
+.corridor .doors__item.is-back {
+  opacity: max(0.5, calc(1 - var(--ad, 0) * 0.09));
+  filter: brightness(max(0.55, calc(1 - var(--ad, 0) * 0.08))) saturate(max(0.5, calc(1 - var(--ad, 0) * 0.08)));
+}
+
+/* ---- Eye level: the camera looks straight at the front door ---- */
+.corridor__track { padding-top: 40px; padding-bottom: 70px; perspective: 1200px; }
+.corridor__track::after { height: 60px; bottom: 40px; }
+@media (max-width: 640px) {
+  .corridor__track { padding-top: 30px; padding-bottom: 56px; perspective: 900px; }
+  .corridor__track::after { height: 40px; bottom: 30px; }
 }

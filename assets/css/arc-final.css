@@ -1,0 +1,64 @@
+/* Final arc — The Eleventh Door (phone glow, grotesk) and The Twelfth Door (white light, Fraunces) */
+.arc--eleventh {
+  --accent: #6a8cff;
+  --accent-soft: rgba(106, 140, 255, 0.15);
+  --tint: #07080d;
+  --cold: #b8c6ff;
+  --f-arc: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --arc-weight: 700;
+  --arc-track: -0.02em;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(106, 140, 255, 0.1), transparent 70%), var(--tint);
+}
+.arc--twelfth {
+  --accent: #c9a96a;
+  --accent-soft: rgba(201, 169, 106, 0.16);
+  --tint: #08080a;
+  --cold: #f3ead6;
+  --f-arc: "Fraunces", "Cormorant Garamond", serif;
+  --arc-weight: 300;
+  --arc-track: -0.01em;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(243, 234, 214, 0.06), transparent 70%), var(--tint);
+}
+.arc--twelfth .arc-title, .arc--twelfth .sec-title, .arc--twelfth .pull, .arc--twelfth .person h3 { font-style: italic; }
+.arc--twelfth .btn-solid { color: #08080a; }
+.arc--twelfth .btn-solid:hover { color: var(--ink); }
+
+/* phone mock */
+.phone {
+  width: min(70vw, 280px);
+  aspect-ratio: 0.52;
+  border-radius: 28px;
+  border: 2px solid #2a2f45;
+  background: #0b0d16;
+  padding: 44px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 60px rgba(106, 140, 255, 0.18);
+}
+.bubble {
+  max-width: 82%;
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-family: var(--f-arc);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.bubble--sys { align-self: center; max-width: 92%; background: #1a1d2c; color: #8a92b5; font-size: 0.72rem; text-align: center; }
+.bubble--in { align-self: flex-start; background: #232842; color: #e9ecff; }
+.bubble--out { align-self: flex-end; background: #6a8cff; color: #fff; }
+.clock-hand { transform-origin: 200px 150px; transform-box: view-box; }
+.scene.is-active .clock-hand--h { animation: spin-h 2.4s cubic-bezier(0.6, 0, 0.3, 1) forwards; }
+.scene.is-active .clock-hand--m { animation: spin-m 2.4s cubic-bezier(0.6, 0, 0.3, 1) forwards; }
+@keyframes spin-h { from { transform: rotate(-120deg); } to { transform: rotate(0deg); } }
+@keyframes spin-m { from { transform: rotate(-1440deg); } to { transform: rotate(0deg); } }
+.runner-a, .runner-b { transform-box: view-box; }
+.scene.is-active .runner-a { animation: run-a 3s ease-in-out forwards; }
+.scene.is-active .runner-b { animation: run-b 3s ease-in-out forwards; }
+@keyframes run-a { from { transform: translateX(-140px); } to { transform: translateX(-12px); } }
+@keyframes run-b { from { transform: translateX(140px); } to { transform: translateX(12px); } }
+.scene--white { background: radial-gradient(ellipse at 50% 50%, #f3ead6 0%, #8a8270 30%, #08080a 75%); }
+.dust { opacity: 1; }
+.scene.is-active .dust { animation: dust 1.4s ease-in 1.4s forwards; }
+@keyframes dust { to { opacity: 0; transform: translateY(30px); filter: blur(6px); } }

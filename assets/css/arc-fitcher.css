@@ -1,0 +1,16 @@
+/* Arc Fitcher's Bird — Grimm blackletter, eggshell and fresh blood */
+.arc--fitcher {
+  --accent: #b3121b;
+  --accent-soft: rgba(179, 18, 27, 0.16);
+  --tint: #120a0d;
+  --cold: #f2e6d0;
+  --f-arc: "UnifrakturMaguntia", "IM Fell English SC", serif;
+  --arc-weight: 400;
+  --arc-track: 0.01em;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(242, 230, 208, 0.07), transparent 70%), var(--tint);
+}
+.arc--fitcher .sec-title { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.3rem); }
+.scene--tower { background: linear-gradient(#17121a, #050405); }
+.stain { transform-origin: 200px 150px; transform-box: view-box; transform: scale(0); }
+.scene.is-active .stain { animation: stain-spread 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) 1.5s forwards; }
+@keyframes stain-spread { to { transform: scale(1); } }

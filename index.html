@@ -16,16 +16,64 @@
 <body class="atmos hub">
   <div class="curtain curtain--start" data-curtain aria-hidden="true"></div>
 
-  <!-- Content warning -->
+  <!-- First-visit briefing: four short cards, no scrolling -->
   <div class="cw" data-cw hidden role="dialog" aria-modal="true" aria-labelledby="cw-title">
-    <div class="cw__card">
-      <p class="eyebrow">Peringatan Konten</p>
-      <h2 id="cw-title">Sebelum kau melangkah masuk</h2>
-      <p>Situs ini merangkum kisah horor dari novel <em>Kaleidoscope of Death</em>. Di dalamnya ada kematian yang digambarkan secara grafis, perundungan, kecelakaan, bunuh diri, dan kanibalisme.</p>
-      <p>Setiap pintu berisi <strong>spoiler penuh</strong> sampai ke akhir kisahnya. Animasi dapat menampilkan kilatan cepat. Suara mati secara bawaan.</p>
+    <div class="cw__card cw__card--steps">
+      <div class="cw__top">
+        <p class="eyebrow" data-cw-label>1 / 4 · Peringatan konten</p>
+        <ol class="cw__dots" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+      </div>
+
+      <section class="cw__step is-on" data-step-card="0" aria-labelledby="cw-title">
+        <h2 id="cw-title">Sebelum kau melangkah masuk</h2>
+        <p>Situs ini merangkum kisah horor dari novel <em>Kaleidoscope of Death</em>. Di dalamnya ada kematian yang digambarkan secara grafis, perundungan, kecelakaan, bunuh diri, dan kanibalisme.</p>
+        <p>Setiap pintu berisi <strong>spoiler penuh</strong> sampai ke akhir kisahnya.</p>
+      </section>
+
+      <section class="cw__step" data-step-card="1" aria-labelledby="cw-h2">
+        <div class="cw__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M12 38 V32 a20 20 0 0 1 40 0 V38" fill="none" stroke="currentColor" stroke-width="4"/><rect x="8" y="36" width="12" height="18" rx="4" fill="currentColor"/><rect x="44" y="36" width="12" height="18" rx="4" fill="currentColor"/></svg>
+        </div>
+        <h2 id="cw-h2">Gunakan headphone</h2>
+        <p>Setiap pintu punya musik latar sendiri: genta di salju, hujan di jendela, ombak di bawah kapal. Banyak detailnya bisikan pelan yang hilang di speaker laptop atau ponsel.</p>
+        <p class="cw__tip">Mulailah dengan volume <strong>rendah</strong>, lalu naikkan perlahan. Ada beberapa suara kejutan yang keras.</p>
+      </section>
+
+      <section class="cw__step" data-step-card="2" aria-labelledby="cw-h3">
+        <h2 id="cw-h3">Cara menyalakan suara</h2>
+        <ol class="cw__how">
+          <li>Suara <strong>mati secara bawaan</strong>. Cari tombol ini di pojok kanan atas setiap halaman:
+            <span class="cw__fake" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>Suara: Mati</span></li>
+          <li>Klik sekali sampai tulisannya menjadi <strong>Suara: Hidup</strong>. Pilihanmu diingat di semua pintu.</li>
+          <li>Klik lagi kapan saja untuk mematikannya.</li>
+        </ol>
+        <div class="cw__try">
+          <button class="btn-ghost" type="button" data-sound-toggle aria-pressed="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M13 3.5c2 1.8 2 7.2 0 9" stroke="currentColor" fill="none"/></svg>
+            <span data-sound-label>Suara: Mati</span>
+          </button>
+          <span class="cw__hint">Coba sekarang: kau akan mendengar musik lorong.</span>
+        </div>
+      </section>
+
+      <section class="cw__step" data-step-card="3" aria-labelledby="cw-h4">
+        <div class="cw__icon cw__icon--warn" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M32 6 L60 56 H4 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><rect x="29" y="24" width="6" height="18" fill="currentColor"/><rect x="29" y="46" width="6" height="6" fill="currentColor"/></svg>
+        </div>
+        <h2 id="cw-h4">Jumpscare &amp; kilatan cahaya</h2>
+        <p>Adegan pembuka tiap pintu berisi <strong>suara kejutan yang keras</strong>, <strong>kilatan merah terang</strong>, dan cahaya berkedip. Jika kau memiliki <strong>epilepsi fotosensitif</strong> atau peka terhadap cahaya berkedip, nyalakan Mode tenang atau jangan lanjutkan.</p>
+        <label class="cw__switch">
+          <input type="checkbox" data-calm-toggle>
+          <span class="cw__switch-ui" aria-hidden="true"></span>
+          <span><strong>Mode tenang</strong> · matikan kilatan, kedipan, dan guncangan layar</span>
+        </label>
+        <p class="cw__tip">Lewati adegan pembuka kapan saja dengan tombol <strong>Lewati adegan</strong> atau <kbd>Esc</kbd>.</p>
+      </section>
+
       <div class="cw__actions">
-        <button class="btn-solid" type="button" data-cw-accept>Aku mengerti, masuk</button>
+        <button class="btn-ghost" type="button" data-cw-back hidden>‹ Kembali</button>
         <button class="btn-ghost" type="button" data-cw-leave>Tidak, kembali</button>
+        <button class="btn-solid" type="button" data-cw-next>Lanjut <span aria-hidden="true">›</span></button>
       </div>
     </div>
   </div>
@@ -52,7 +100,7 @@
         <span class="hub-title__main" data-flicker>Spirealm</span>
       </h1>
       <p class="lead hub-hero__lead reveal">Di ujung lorong yang tak berujung berdiri dua belas pintu besi. Di balik setiap pintu, sebuah legenda hidup kembali dan menunggu seseorang untuk dimangsa.</p>
-      <p class="hub-hero__instr reveal"><span aria-hidden="true">↓</span> Pilih sebuah pintu. Jangan menoleh ke belakang.</p>
+      <p class="hub-hero__instr reveal"><span aria-hidden="true">↓</span> Lima belas pintu di satu lorong. Berjalanlah dari kiri ke kanan.</p>
     </section>
 
     <!-- Corridor of doors -->
@@ -60,10 +108,84 @@
       <h2 id="corridor-title" class="sr-only">Pintu-pintu Spirealm</h2>
       <div class="corridor__floor" aria-hidden="true"></div>
 
+      <div class="corridor__bar">
+        <p class="corridor__count" aria-live="polite"><span data-count>01</span> <span class="muted">/ 15</span></p>
+        <div class="corridor__nav">
+          <button class="btn-ghost corridor__btn" type="button" data-step="-1" aria-label="Pintu sebelumnya">‹</button>
+          <button class="btn-ghost corridor__btn" type="button" data-step="1" aria-label="Pintu berikutnya">›</button>
+        </div>
+      </div>
+
+      <div class="corridor__track" data-track tabindex="0" aria-label="Lorong pintu. Gunakan panah kiri dan kanan untuk berjalan.">
       <ul class="doors" role="list">
-        <!-- Door: Teke Teke -->
-        <li class="doors__item reveal">
-          <a class="door" href="arc-teke-teke.html" data-door data-arc="teke" style="--glow:#d01b22">
+        <!-- DOORS:START -->
+        <li class="doors__item">
+          <a class="door" href="arc-snow-village.html" data-door data-arc="1" data-roman="I" data-name="Snow Village" data-id-name="Desa Bersalju" data-tease="Buat peti mati untuk tahun depan. Jangan tanya untuk siapa." style="--glow:#cfe3f5">
+            <span class="door__ord" aria-hidden="true">01</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">I</span>
+              </span>
+            </span>
+            <span class="door__plate">Snow Village</span>
+            <span class="door__meta">Pintu I <span class="dot">·</span> Desa Bersalju</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-fitchers-bird.html" data-door data-arc="2" data-roman="II" data-name="Fitcher's Bird" data-id-name="Burung Fitcher" data-tease="Pesta ulang tahun anak kembar tiga, tujuh hari lagi. Ingat nama mereka." style="--glow:#e8c84a">
+            <span class="door__ord" aria-hidden="true">02</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">II</span>
+              </span>
+            </span>
+            <span class="door__plate">Fitcher's Bird</span>
+            <span class="door__meta">Pintu II <span class="dot">·</span> Burung Fitcher</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-sister-drum.html" data-door data-arc="3" data-roman="III" data-name="Sister Drum" data-id-name="Genderang Saudari" data-tease="Tur wisata ke kuil di dataran tinggi. Pemandu menghitung kurang satu." style="--glow:#d8962f">
+            <span class="door__ord" aria-hidden="true">03</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">III</span>
+              </span>
+            </span>
+            <span class="door__plate">Sister Drum</span>
+            <span class="door__meta">Pintu III <span class="dot">·</span> Genderang Saudari</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-woman-of-the-rain.html" data-door data-arc="4" data-roman="IV" data-name="Woman of the Rain" data-id-name="Perempuan Hujan" data-tease="Setiap malam, perempuan di lukisan itu berdiri lebih dekat." style="--glow:#8fa6c8">
+            <span class="door__ord" aria-hidden="true">04</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">IV</span>
+              </span>
+            </span>
+            <span class="door__plate">Woman of the Rain</span>
+            <span class="door__meta">Pintu IV <span class="dot">·</span> Perempuan Hujan</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-teke-teke.html" data-door data-arc="5" data-roman="V" data-name="Satchan / Sachiko" data-id-name="Misteri Satchan" data-tease="Lagu ejekan untuk gadis yang sudah mati. Jangan bernyanyi." style="--glow:#d01b22">
+            <span class="door__ord" aria-hidden="true">05</span>
             <span class="door__frame" aria-hidden="true">
               <span class="door__light"></span>
               <span class="door__leaf">
@@ -73,48 +195,13 @@
                 <span class="door__numeral">V</span>
               </span>
             </span>
-            <span class="door__plate">Arc Teke Teke</span>
-            <span class="door__meta">Pintu V <span class="dot">·</span> Satchan</span>
+            <span class="door__plate">Satchan / Sachiko</span>
+            <span class="door__meta">Pintu V <span class="dot">·</span> Misteri Satchan</span>
           </a>
         </li>
-
-        <!-- Door: Minator -->
-        <li class="doors__item reveal">
-          <a class="door" href="arc-minator.html" data-door data-arc="minator" style="--glow:#d9b04a">
-            <span class="door__frame" aria-hidden="true">
-              <span class="door__light"></span>
-              <span class="door__leaf">
-                <span class="door__panel door__panel--top"></span>
-                <span class="door__panel door__panel--bottom"></span>
-                <span class="door__knob"></span>
-                <span class="door__numeral">XIII</span>
-              </span>
-            </span>
-            <span class="door__plate">Arc Minator</span>
-            <span class="door__meta">Pintu XIII <span class="dot">·</span> Minotaur</span>
-          </a>
-        </li>
-
-        <!-- Door: Patung -->
-        <li class="doors__item reveal">
-          <a class="door" href="arc-patung.html" data-door data-arc="patung" style="--glow:#efe8dc">
-            <span class="door__frame" aria-hidden="true">
-              <span class="door__light"></span>
-              <span class="door__leaf">
-                <span class="door__panel door__panel--top"></span>
-                <span class="door__panel door__panel--bottom"></span>
-                <span class="door__knob"></span>
-                <span class="door__numeral">XI</span>
-              </span>
-            </span>
-            <span class="door__plate">Arc Patung</span>
-            <span class="door__meta">Pintu XI <span class="dot">·</span> Pahatan</span>
-          </a>
-        </li>
-
-        <!-- Second row -->
-        <li class="doors__item reveal">
-          <a class="door" href="arc-slenderman.html" data-door data-arc="slender" style="--glow:#c9d1cc">
+        <li class="doors__item">
+          <a class="door" href="arc-slenderman.html" data-door data-arc="6" data-roman="VI" data-name="Slenderman" data-id-name="Sosok Slenderman" data-tease="Poster anak hilang yang menyimpan wajah kalian sendiri." style="--glow:#c9d1cc">
+            <span class="door__ord" aria-hidden="true">06</span>
             <span class="door__frame" aria-hidden="true">
               <span class="door__light"></span>
               <span class="door__leaf">
@@ -124,12 +211,61 @@
                 <span class="door__numeral">VI</span>
               </span>
             </span>
-            <span class="door__plate">Arc Slenderman</span>
-            <span class="door__meta">Pintu VI <span class="dot">·</span> Topi tinggi</span>
+            <span class="door__plate">Slenderman</span>
+            <span class="door__meta">Pintu VI <span class="dot">·</span> Sosok Slenderman</span>
           </a>
         </li>
-        <li class="doors__item reveal">
-          <a class="door" href="arc-teru-teru-bozu.html" data-door data-arc="teru" style="--glow:#7d9ccc">
+        <li class="doors__item">
+          <a class="door" href="arc-waverly-hills.html" data-door data-arc="7" data-roman="VII" data-name="Waverly Hills Sanatorium" data-id-name="Sanatorium Waverly Hills" data-tease="Dilarang keluar kamar setelah pukul delapan. Perawat itu melompat lagi." style="--glow:#7fbf9f">
+            <span class="door__ord" aria-hidden="true">07</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">VII</span>
+              </span>
+            </span>
+            <span class="door__plate">Waverly Hills Sanatorium</span>
+            <span class="door__meta">Pintu VII <span class="dot">·</span> Sanatorium Waverly Hills</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-mirror-hotel.html" data-door data-arc="8" data-roman="VIII" data-name="Mirror Hotel" data-id-name="Hotel Cermin" data-tease="Di cermin, lorong ini terbakar. Di dunia nyata, sunyi." style="--glow:#ff8a3d">
+            <span class="door__ord" aria-hidden="true">08</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">VIII</span>
+              </span>
+            </span>
+            <span class="door__plate">Mirror Hotel</span>
+            <span class="door__meta">Pintu VIII <span class="dot">·</span> Hotel Cermin</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-river-god.html" data-door data-arc="9" data-roman="IX" data-name="River God" data-id-name="Dewa Sungai" data-tease="Lampu minyak yang hangat. Minyaknya dari manusia." style="--glow:#e0362e">
+            <span class="door__ord" aria-hidden="true">09</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">IX</span>
+              </span>
+            </span>
+            <span class="door__plate">River God</span>
+            <span class="door__meta">Pintu IX <span class="dot">·</span> Dewa Sungai</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-teru-teru-bozu.html" data-door data-arc="10" data-roman="X" data-name="Teru Teru Bozu" data-id-name="Boneka Penangkal Hujan" data-tease="Siapa yang kehujanan, besok menjadi boneka berikutnya." style="--glow:#7d9ccc">
+            <span class="door__ord" aria-hidden="true">10</span>
             <span class="door__frame" aria-hidden="true">
               <span class="door__light"></span>
               <span class="door__leaf">
@@ -139,12 +275,29 @@
                 <span class="door__numeral">X</span>
               </span>
             </span>
-            <span class="door__plate">Arc Teru Teru Bōzu</span>
-            <span class="door__meta">Pintu X <span class="dot">·</span> Hujan</span>
+            <span class="door__plate">Teru Teru Bozu</span>
+            <span class="door__meta">Pintu X <span class="dot">·</span> Boneka Penangkal Hujan</span>
           </a>
         </li>
-        <li class="doors__item reveal">
-          <a class="door" href="arc-hako-onna.html" data-door data-arc="hako" style="--glow:#e0a05a">
+        <li class="doors__item">
+          <a class="door" href="arc-patung.html" data-door data-arc="11" data-roman="XI" data-name="Sculpture" data-id-name="Patung" data-tease="Patung yang dulu hanya kepala kini punya detak jantung." style="--glow:#efe8dc">
+            <span class="door__ord" aria-hidden="true">11</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XI</span>
+              </span>
+            </span>
+            <span class="door__plate">Sculpture</span>
+            <span class="door__meta">Pintu XI <span class="dot">·</span> Patung</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-hako-onna.html" data-door data-arc="12" data-roman="XII" data-name="Hako Onna" data-id-name="Perempuan Kotak" data-tease="Seratus peti. Buka satu setiap hari, atau kelaparan." style="--glow:#e0a05a">
+            <span class="door__ord" aria-hidden="true">12</span>
             <span class="door__frame" aria-hidden="true">
               <span class="door__light"></span>
               <span class="door__leaf">
@@ -154,11 +307,70 @@
                 <span class="door__numeral">XII</span>
               </span>
             </span>
-            <span class="door__plate">Arc Hako Onna</span>
-            <span class="door__meta">Pintu XII <span class="dot">·</span> Seratus peti</span>
+            <span class="door__plate">Hako Onna</span>
+            <span class="door__meta">Pintu XII <span class="dot">·</span> Perempuan Kotak</span>
           </a>
         </li>
+        <li class="doors__item">
+          <a class="door" href="arc-minator.html" data-door data-arc="13" data-roman="XIII" data-name="Minotaur" data-id-name="Minotaur" data-tease="Kapal di laut tanpa tepi. Kamarnya berpindah setiap lima menit." style="--glow:#d9b04a">
+            <span class="door__ord" aria-hidden="true">13</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XIII</span>
+              </span>
+            </span>
+            <span class="door__plate">Minotaur</span>
+            <span class="door__meta">Pintu XIII <span class="dot">·</span> Minotaur</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-eleventh-door.html" data-door data-arc="14" data-roman="XIV" data-name="The Eleventh Door" data-id-name="Pintu Kesebelas" data-tease="Hidup tanpa pintu, dan tanpa dia. Petunjuknya: Tanpa Jawaban." style="--glow:#6a8cff">
+            <span class="door__ord" aria-hidden="true">14</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XIV</span>
+              </span>
+            </span>
+            <span class="door__plate">The Eleventh Door</span>
+            <span class="door__meta">Pintu XIV <span class="dot">·</span> Pintu Kesebelas</span>
+          </a>
+        </li>
+        <li class="doors__item">
+          <a class="door" href="arc-twelfth-door.html" data-door data-arc="15" data-roman="XV" data-name="The Twelfth Door" data-id-name="Pintu Kedua Belas" data-tease="Dua kunci: Hidup Semu dan Mati Nyata. Hanya satu yang bisa dipakai." style="--glow:#f3ead6">
+            <span class="door__ord" aria-hidden="true">15</span>
+            <span class="door__frame" aria-hidden="true">
+              <span class="door__light"></span>
+              <span class="door__leaf">
+                <span class="door__panel door__panel--top"></span>
+                <span class="door__panel door__panel--bottom"></span>
+                <span class="door__knob"></span>
+                <span class="door__numeral">XV</span>
+              </span>
+            </span>
+            <span class="door__plate">The Twelfth Door</span>
+            <span class="door__meta">Pintu XV <span class="dot">·</span> Pintu Kedua Belas</span>
+          </a>
+        </li>
+        <!-- DOORS:END -->
       </ul>
+      </div>
+
+      <div class="corridor__caption" data-caption aria-live="polite">
+        <p class="eyebrow"><span data-cap-num>Pintu I</span> <span class="dot">◆</span> <span data-cap-id>Desa Bersalju</span></p>
+        <h3 class="corridor__name" data-cap-name>Snow Village</h3>
+        <p class="corridor__tease" data-cap-tease></p>
+        <a class="btn-solid" href="arc-snow-village.html" data-cap-open>Buka pintu <span aria-hidden="true">›</span></a>
+      </div>
+
+      <ol class="corridor__rail" data-rail aria-label="Peta lorong"></ol>
       <p class="toast" data-toast role="status" aria-live="polite"></p>
     </section>
 
@@ -199,6 +411,7 @@
     <p class="muted">Nomor pintu mengikuti hitungan Lin Qiushi di dalam novel.</p>
   </footer>
 
+  <script src="assets/js/score.js"></script>
   <script src="assets/js/audio.js"></script>
   <script src="assets/js/common.js"></script>
   <script src="assets/js/hub.js"></script>

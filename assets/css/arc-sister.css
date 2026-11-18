@@ -1,0 +1,19 @@
+/* Arc Sister Drum — highland saffron, prayer flags, maroon skin */
+.arc--sister {
+  --accent: #d8962f;
+  --accent-soft: rgba(216, 150, 47, 0.15);
+  --tint: #120c08;
+  --cold: #e9c9a0;
+  --f-arc: "Eczar", "Shippori Mincho B1", serif;
+  --arc-weight: 700;
+  --arc-track: 0;
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(216, 150, 47, 0.1), transparent 70%), var(--tint);
+}
+.arc--sister .btn-solid { color: #120c08; }
+.arc--sister .btn-solid:hover { color: var(--ink); }
+.scene--plateau { background: linear-gradient(#2a1d14, #0a0705); }
+.flag { transform-box: fill-box; transform-origin: 50% 0; }
+.scene.is-active .flag { animation: k-swing 1.6s ease-in-out infinite; }
+.drum-skin { transform-box: fill-box; transform-origin: center; }
+.scene.is-active .drum-skin { animation: beat 0.67s ease-out infinite; }
+@keyframes beat { 0% { transform: scaleY(0.9); } 30% { transform: scaleY(1.05); } 100% { transform: scaleY(1); } }

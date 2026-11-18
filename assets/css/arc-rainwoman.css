@@ -1,0 +1,14 @@
+/* Arc Woman of the Rain — wet oil paint, gilt frames, Bodoni italic */
+.arc--rainwoman {
+  --accent: #b23a48;
+  --accent-soft: rgba(178, 58, 72, 0.15);
+  --tint: #0b0d12;
+  --cold: #9aa8b8;
+  --f-arc: "Bodoni Moda", "Didot", serif;
+  --arc-weight: 500;
+  --arc-track: -0.01em;
+  background: radial-gradient(ellipse 60% 40% at 30% 0%, rgba(154, 168, 184, 0.09), transparent 70%), var(--tint);
+}
+.arc--rainwoman .arc-title, .arc--rainwoman .sec-title, .arc--rainwoman .pull { font-style: italic; }
+.scene--castle { background: linear-gradient(#1a2130, #06080c); }
+.scene--fire { background: radial-gradient(ellipse at 50% 70%, #3a120a, #000 70%); }

@@ -60,7 +60,7 @@
   }
 
   function runFlash(scene) {
-    if (!scene.dataset.flash || !flashEl) return;
+    if (!scene.dataset.flash || !flashEl || window.Spi.calm) return;
     later(() => {
       flashEl.classList.remove("is-on");
       void flashEl.offsetWidth;

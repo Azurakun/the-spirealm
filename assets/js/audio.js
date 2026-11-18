@@ -62,6 +62,28 @@
     drone = { g, nodes: [o1, o2, o3, lfo] };
   }
 
+  /* Background music: this page's own piece from SpiScore, or the old drone
+     as a fallback (score.js missing, unknown page, or the piece fails). */
+  let music = null;
+  let musicTimer = 0;
+  function startMusic() {
+    if (music || drone) return;
+    try {
+      const name = window.SpiScore && window.SpiScore.themeForPage();
+      music = name ? window.SpiScore.start(ctx, master, name) : null;
+    } catch (e) {
+      music = null;
+    }
+    if (!music) { startDrone(api.droneBase); return; }
+    const pump = () => {
+      if (!enabled || ctx.state !== "running") return;
+      try { music.schedule(ctx.currentTime + 0.6); }
+      catch (e) { clearInterval(musicTimer); music.stop(); music = null; startDrone(api.droneBase); }
+    };
+    pump();
+    musicTimer = setInterval(pump, 150);
+  }
+
   const sfx = {
     // dull floor knock — "tek"
     thud() {
@@ -142,7 +164,16 @@
       });
     },
     // sharp sting for the reveal
+    // Jump scare: this door's layered stinger from SpiScore, else the old one.
     sting() {
+      try {
+        const S = window.SpiScore;
+        if (S && S.stinger) { S.stinger(ctx, master, S.stingFor(S.themeForPage())); return; }
+      } catch (e) { /* fall through to the classic sting */ }
+      sfx.stingClassic();
+    },
+    // The original sharp sting, kept as the fallback.
+    stingClassic() {
       const t = ctx.currentTime;
       [523, 554, 740].forEach(f => {
         const o = ctx.createOscillator();
@@ -162,6 +193,8 @@
 
   const api = {
     get enabled() { return enabled; },
+    /* What is playing: "music: <title>", "drone" (fallback) or "none". */
+    get mode() { return music ? "music: " + music.title : drone ? "drone" : "none"; },
     droneBase: 55,
     async set(on) {
       enabled = on;
@@ -171,7 +204,7 @@
         try { await ctx.resume(); } catch (e) { /* blocked */ }
         master.gain.cancelScheduledValues(ctx.currentTime);
         master.gain.setTargetAtTime(0.8, ctx.currentTime, 0.4);
-        startDrone(api.droneBase);
+        startMusic();
       } else if (ctx) {
         master.gain.setTargetAtTime(0, ctx.currentTime, 0.2);
       }

@@ -1,0 +1,14 @@
+/* Arc River God — red lanterns, ink-black water, heavy Song serif */
+.arc--river {
+  --accent: #e0362e;
+  --accent-soft: rgba(224, 54, 46, 0.15);
+  --tint: #0f0907;
+  --cold: #e3b04b;
+  --f-arc: "Noto Serif TC", "Shippori Mincho B1", serif;
+  --arc-weight: 900;
+  --arc-track: 0.04em;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(224, 54, 46, 0.1), transparent 70%), var(--tint);
+}
+.scene--lantern { background: linear-gradient(#1a0c08, #050302); }
+.lantern { transform-box: fill-box; transform-origin: 50% 0; animation: k-swing 2.6s ease-in-out infinite; }
+.wave-line { animation: k-drift 4s linear infinite; }

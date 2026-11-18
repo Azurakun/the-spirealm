@@ -1,0 +1,17 @@
+/* Arc Snow Village — blizzard white, crimson lacquer coffin */
+.arc--snow {
+  --accent: #c4161c;
+  --accent-soft: rgba(196, 22, 28, 0.16);
+  --tint: #0a1016;
+  --cold: #b9cfe2;
+  --f-arc: "Marcellus SC", "Cinzel", serif;
+  --arc-weight: 400;
+  --arc-track: 0.04em;
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(185, 207, 226, 0.1), transparent 70%), var(--tint);
+}
+.scene--sky { background: linear-gradient(#1b2836, #070a0e); }
+.coffin-lid { transform-origin: 0% 50%; transform-box: fill-box; }
+.scene.is-active .coffin-lid { animation: lid-open 1.4s cubic-bezier(0.5, 0, 0.3, 1) 1.2s forwards; }
+@keyframes lid-open { to { transform: translateX(-46%) rotate(-14deg); } }
+.key-glint { opacity: 0; }
+.scene.is-active .key-glint { animation: k-in 0.6s ease 2.2s forwards, k-pulse 1s ease-in-out 2.8s infinite; }

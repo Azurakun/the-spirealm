@@ -1,0 +1,20 @@
+/* Arc Waverly Hills — 1920s hospital records, sickly green tile, iodine */
+.arc--waverly {
+  --accent: #7fbf9f;
+  --accent-soft: rgba(127, 191, 159, 0.14);
+  --tint: #0a0f0d;
+  --cold: #c9dccf;
+  --f-arc: "Old Standard TT", "Times New Roman", serif;
+  --arc-weight: 700;
+  --arc-track: 0.01em;
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(127, 191, 159, 0.08), transparent 70%), var(--tint);
+}
+.arc--waverly .btn-solid { color: #0a0f0d; }
+.arc--waverly .btn-solid:hover { color: var(--ink); }
+.arc--waverly .arc-title { text-transform: uppercase; letter-spacing: 0.02em; }
+.scene--ward { background: linear-gradient(#141c18, #050706); }
+.jumper { transform-box: fill-box; }
+.scene.is-active .jumper { animation: jump 1.3s cubic-bezier(0.55, 0, 1, 0.45) infinite; }
+@keyframes jump { 0% { transform: translateY(0); opacity: 1; } 85% { transform: translateY(420px); opacity: 1; } 100% { transform: translateY(420px); opacity: 0; } }
+.tag502 { transform-box: fill-box; transform-origin: 50% 0; }
+.scene.is-active .tag502 { animation: k-swing 0.9s ease-in-out infinite; }

@@ -28,7 +28,18 @@
     setTimeout(() => { window.location.href = href; }, reduced ? 0 : (delay ?? 700));
   }
 
-  window.Spi = { reduced, observeReveals, leave, lift };
+  /* Calm mode: no flashes, flicker or screen shake (photosensitivity). */
+  const CALM_KEY = "spirealm.calm";
+  let calm = false;
+  try { calm = localStorage.getItem(CALM_KEY) === "1"; } catch (e) { /* ignore */ }
+  document.documentElement.classList.toggle("calm", calm);
+  function setCalm(on) {
+    calm = !!on;
+    document.documentElement.classList.toggle("calm", calm);
+    try { localStorage.setItem(CALM_KEY, calm ? "1" : "0"); } catch (e) { /* ignore */ }
+  }
+
+  window.Spi = { reduced, observeReveals, leave, lift, get calm() { return calm; }, setCalm };
 
   // Pages restored from the back/forward cache keep their faded state; reset it.
   window.addEventListener("pageshow", e => {
